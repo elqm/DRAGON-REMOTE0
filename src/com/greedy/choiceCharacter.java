@@ -1,6 +1,7 @@
 package com.greedy;
 
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
@@ -22,6 +23,7 @@ public class choiceCharacter {
 	Image image = new ImageIcon("images/choiceCharacter.PNG").getImage().getScaledInstance(500, 400, 0);
 	
 	JLabel label = new JLabel(new ImageIcon(image));
+	
 	JButton button1 = new JButton("캐릭터 선택");
 	JButton button2 = new JButton("게임 설정");
 	JButton button3 = new JButton("로그 아웃");
