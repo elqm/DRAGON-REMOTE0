@@ -1,5 +1,5 @@
 
-package com.greedy;
+package com.greedy.choiceCharacter;
 
 public class Application {
 

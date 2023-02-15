@@ -1,4 +1,4 @@
-package com.greedy;
+package com.greedy.choiceCharacter;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -19,7 +19,7 @@ public class choiceCharacter {
 	JPanel panel = new JPanel();
 	panel.setLayout(null);
 	
-	mF.setBounds(300, 200, 800, 500);
+	mF.setBounds(300, 200, 600, 450);
 	
 	Image image = new ImageIcon("images/choiceCharacter.PNG").getImage().getScaledInstance(600, 400, 0);
 	
@@ -40,9 +40,6 @@ public class choiceCharacter {
 	panel.add(button3);
 	
 	mF.add(panel);
-//	mF.add(button1);
-//	mF.add(button2);
-//	mF.add(button3);
 	
 	mF.setVisible(true);
 	mF.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
