@@ -1,73 +1,93 @@
 package com.greedy.user;
 
-import java.awt.BorderLayout;
-import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
+import java.awt.Font;
+import java.awt.Graphics;
 
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class StartPage {
+import com.greedy.design.RoundedButton;
 
-	public StartPage() {
-		
-		JFrame mf = new JFrame();
-		
-		mf.setBounds(400, 10, 700, 800);
-		
-		mf.setTitle("진격의 DRAGON");
-		
-		JPanel panel = new JPanel();
-		
-		Image icon1 = new ImageIcon("images/startpage.png").getImage().getScaledInstance(700, 800, 0);
-//		Image icon2 = new ImageIcon("images/dragon1.png").getImage().getScaledInstance(100, 100, 0);
-//		Image icon3 = new ImageIcon("images/dragon2.png").getImage().getScaledInstance(100, 100, 0);
-//		Image icon4 = new ImageIcon("images/dragon3.png").getImage().getScaledInstance(100, 100, 0);
-		
-		JLabel label1 = new JLabel(new ImageIcon(icon1));
-//		JLabel label2 = new JLabel(new ImageIcon(icon2));
-//		JLabel label3 = new JLabel(new ImageIcon(icon3));
-//		JLabel label4 = new JLabel(new ImageIcon(icon4));
-		
-		panel.add(label1);
-		
-		JButton button = new JButton("GAME START");
+public class StartPage extends JFrame implements Runnable {
 
-		
-		button.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
+	private ImageIcon bg = null;
+	private ImageIcon dg1 = null;
+	private ImageIcon dg2 = null;
+	private ImageIcon dg3 = null;
+	
+	public void StartPage() {}
+	
+	@Override
+	public void run() {
 
-
-				
-			}
-		});
-		
-		
-		mf.add(label1, BorderLayout.CENTER);
-
-		
 		try {
-			mf.setIconImage(ImageIO.read(new File("images/dragon1.png")));
-		} catch (IOException e) {
-			e.printStackTrace();
+		JFrame mf = new JFrame();
+		mf.setBounds(600, 100, 715, 835);
+		mf.setLayout(null);
+		bg = new ImageIcon("images/startpage.png");
+		dg1 = new ImageIcon("images/dragon1.png");
+		dg2 = new ImageIcon("images/dragon2.png");
+		dg3 = new ImageIcon("images/dragon3.png");
+		
+		JPanel panel1 = new JPanel() {
+			public void paintComponent(Graphics g) {
+				g.drawImage(bg.getImage(), 0, 0, 700, 800, null);
+			}
+		};
+		panel1.setBounds(0, 0, 700, 800);
+		
+		JPanel panel2 = new JPanel() {
+			public void paintComponent(Graphics g) {
+				g.drawImage(dg1.getImage(), 0, 0, 100, 120, null);
+			}
+		};
+		panel2.setBounds(100, 430, 200, 200);
+		
+		JPanel panel3 = new JPanel() {
+			public void paintComponent(Graphics g) {
+				g.drawImage(dg2.getImage(), 0, 0, 100, 120, null);
+			}
+		};
+		panel3.setBounds(300, 430, 200, 200);
+		
+		JPanel panel4 = new JPanel() {
+			public void paintComponent(Graphics g) {
+				g.drawImage(dg3.getImage(), 0, 0, 100, 120, null);
+			}
+		};
+		panel4.setBounds(500, 430, 200, 200);
+		
+		RoundedButton rButton = new RoundedButton("GAME START");
+		rButton.setBounds(150, 582, 400, 60);
+		
+		Font font = new Font("돋움", Font.BOLD, 30);
+		
+		rButton.setFont(font);
+		mf.add(rButton);
+		mf.add(panel4);
+		mf.add(panel3);
+		mf.add(panel2);
+		mf.add(panel1);
+
+		mf.setVisible(true);
+		} catch (Exception e) {
 		}
 		
-		mf.setVisible(true);
-		mf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		mf.setLayout(null);
-		
-		button.setBounds(160, 563, 380, 50);
-		mf.add(button);
 	}
 	
+	public static void main(String[] args) {
+
+		Thread t = new Thread(new StartPage());
+		t.start();
+		
+	}
+	
+	
+	
+
+
 }
+
