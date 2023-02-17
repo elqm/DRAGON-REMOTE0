@@ -14,34 +14,31 @@ public class choiceCharacter {
 	
 	public void display() {
 
-	JFrame mF = new JFrame();
 	
-	JPanel panel = new JPanel();
-	panel.setLayout(null);
+	JLabel BackGround = new  JLabel(new ImageIcon("images/choiceCharacter.PNG"));
+	JButton button1 = new JButton(new ImageIcon("images/choiceCharacterWant.PNG"));
+	JButton button2 = new JButton(new ImageIcon("images/choiceCharacterWant2.PNG"));
+	JButton button3 = new JButton(new ImageIcon("images/choiceCharacterWant3.PNG"));
+	JFrame A = new JFrame();
 	
-	mF.setBounds(300, 200, 600, 450);
 	
-	Image image = new ImageIcon("images/choiceCharacter.PNG").getImage().getScaledInstance(600, 400, 0);
 	
-	JLabel label = new JLabel(new ImageIcon(image));
+	A.add(BackGround);
+	A.setSize(1000,600);
+	A.setVisible(true);
+	A.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	A.setLayout(null);
 	
-	JButton button1 = new JButton("캐릭터 선택");
-	JButton button2 = new JButton("게임 설정");
-	JButton button3 = new JButton("로그 아웃");
+	button1.setBounds(350, 100, 250, 50);
+	button2.setBounds(350, 200, 250, 50);
+	button3.setBounds(350, 300, 250, 50);
 	
-	label.setBounds(10, 10, 500, 400);
-	button1.setBounds(200, 100, 150, 50);
-	button2.setBounds(200, 200, 150, 50);
-	button3.setBounds(200, 300, 150, 50);
 	
-	panel.add(label);
-	panel.add(button1);
-	panel.add(button2);
-	panel.add(button3);
+	A.add(button1); 
+	A.add(button2);
+	A.add(button3);
 	
-	mF.add(panel);
 	
-	mF.setVisible(true);
-	mF.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
 	}
 }
