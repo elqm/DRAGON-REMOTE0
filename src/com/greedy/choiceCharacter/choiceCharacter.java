@@ -15,13 +15,14 @@ public class choiceCharacter {
 	public void display() {
 
 	JFrame mF = new JFrame();
+	mF.setBounds(300, 200, 1200, 800);
 	
 	JPanel panel = new JPanel();
 	panel.setLayout(null);
 	
-	mF.setBounds(300, 200, 600, 450);
+	JButton button = new JButton(); 
 	
-	Image image = new ImageIcon("images/choiceCharacter.PNG").getImage().getScaledInstance(600, 400, 0);
+	Image image = new ImageIcon("images/easyBackground").getImage().getScaledInstance(600, 400, 0);
 	
 	JLabel label = new JLabel(new ImageIcon(image));
 	
@@ -29,15 +30,15 @@ public class choiceCharacter {
 	JButton button2 = new JButton("게임 설정");
 	JButton button3 = new JButton("로그 아웃");
 	
-	label.setBounds(10, 10, 500, 400);
+	label.setBounds(10, 10, 600, 400);
 	button1.setBounds(200, 100, 150, 50);
 	button2.setBounds(200, 200, 150, 50);
 	button3.setBounds(200, 300, 150, 50);
 	
-	panel.add(label);
-	panel.add(button1);
+	panel.add(button1); 
 	panel.add(button2);
 	panel.add(button3);
+	panel.add(label);
 	
 	mF.add(panel);
 	
