@@ -27,7 +27,7 @@ public class Time extends JFrame {
 		
 		p.setLayout(null);
 		
-		l1 = new JLabel("00");
+		l1 = new JLabel("00"); 
 		l1.setBounds(50, 10, 50, 50);
 		l1.setFont(font);
 		l3 = new JLabel(" : ");
