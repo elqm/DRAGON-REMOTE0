@@ -51,7 +51,7 @@ public class GamePage extends JFrame{
 		JLabel glaunLb = new JLabel();
 		glaunLb.setIcon(new ImageIcon(glaun));
 		glaunLb.setBounds(xpos, ypos, 122, 118);
-
+ 
 		JLabel normalLb = new JLabel();
 		normalLb.setIcon(new ImageIcon(normal));
 		normalLb.setBounds(460, 10, 213, 37);

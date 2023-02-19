@@ -15,7 +15,7 @@ public class Time extends JFrame {
 	private JPanel p = new JPanel();
 	
 	private Font font = new Font("궁서체", Font.BOLD, 25);
-	
+	 
 	private JButton start;
 	private Thread p_display, t_display;
 	private JLabel l1, l2, l3;

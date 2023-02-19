@@ -19,7 +19,7 @@ public class GameOver extends JFrame {
 
 	private JFrame mf = new JFrame();
 
-	public GameOver() {
+	public GameOver() { 
 
 		this.mf = this;
 		mf.setSize(1190, 770);

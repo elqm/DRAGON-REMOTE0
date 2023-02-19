@@ -8,7 +8,7 @@ public class Application {
 
 //		new Description();
 		
-//		new GamePage();
+//		new GamePage(); 
 		
 		new Time();
 		

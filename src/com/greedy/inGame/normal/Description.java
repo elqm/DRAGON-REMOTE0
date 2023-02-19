@@ -19,7 +19,7 @@ public class Description extends JFrame {
 
 	private JFrame mf = new JFrame();
 
-	public Description() {
+	public Description() { 
 
 		this.mf = this;
 		mf.setSize(1190, 770);
