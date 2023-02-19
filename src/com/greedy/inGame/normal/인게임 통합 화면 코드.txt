@@ -1,0 +1,141 @@
+package com.greedy.inGame.normal;
+
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import com.greedy.design.PlayButton;
+import com.greedy.inGame.option.Time;
+
+public class GamePage extends JFrame {
+	
+	private JFrame mf = new JFrame();
+	
+//	Toolkit imageTool = Toolkit.getDefaultToolkit();
+//	Image bg = imageTool.getImage("images/normalBg.png");
+//	Image glaun = imageTool.getImage("images/glaunCha.png");
+	
+	
+	Image buffImg;
+	Graphics buffG;
+	
+	int xpos = 510;
+	int ypos = 590;
+	
+	public GamePage() {
+		
+//		Time time = new Time();
+		
+		Font labelFont = new Font("DungGeunMo", Font.PLAIN, 25);
+				
+		this.mf = this;
+		mf.setSize(1190, 770);
+		mf.setLocationRelativeTo(null);
+		mf.setResizable(false);
+		
+		mf.setTitle("진격의 DRAGON");
+		
+		JPanel panel = new JPanel();
+		
+		panel.setLayout(null);
+		
+		ImageIcon bg = new ImageIcon("images/normalBg.png");
+		Image desc = new ImageIcon("images/Desc.png").getImage().getScaledInstance(1063, 608, 0);
+		Image glaun = new ImageIcon("images/glaunCha.png").getImage().getScaledInstance(122, 118, 0);
+		
+		JLabel bgLb = new JLabel(bg);
+//		label1.setIcon(new ImageIcon(bg));
+		bgLb.setSize(1178, 737);
+		
+		JLabel descLb = new JLabel();
+		descLb.setIcon(new ImageIcon(desc));
+		descLb.setBounds(57, 15, 1178, 737);
+		
+		JLabel glaunLb = new JLabel();
+		glaunLb.setIcon(new ImageIcon(glaun));
+		glaunLb.setBounds(xpos, ypos, 122, 118);
+		
+		PlayButton button = new PlayButton("PLAY");
+		
+		button.setFont(labelFont);
+		button.setLocation(710, 530);
+		button.setSize(250, 100);
+		
+		button.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+//	            mf.dispose();
+//	            new GamePage();
+				button.setVisible(false);
+	            descLb.setVisible(false);
+				
+			}
+		});
+		
+		panel.add(button);
+		panel.add(descLb);
+		panel.add(glaunLb);
+		panel.add(bgLb);
+		
+		mf.add(panel);
+	
+		
+		mf.setVisible(true);
+		mf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		
+		addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				switch(e.getKeyCode()) {
+					case KeyEvent.VK_LEFT :
+						if(xpos > 0) {
+							glaunLb.setLocation(glaunLb.getX()-10, glaunLb.getY());							
+							xpos-=10;
+						}
+						repaint();
+						break;
+					case KeyEvent.VK_RIGHT :
+						if(xpos < 1060) {
+							glaunLb.setLocation(glaunLb.getX()+10, glaunLb.getY());							
+							xpos+=10;
+						}
+						break;
+				}
+			}
+			
+		});
+
+
+	}
+	
+//	@Override
+//	public void paint(Graphics g) {
+//		buffImg = createImage(getWidth(), getHeight());
+//		buffG = buffImg.getGraphics();
+//		
+//		update(g);
+//	}
+//	
+//	@Override
+//	public void update(Graphics g) {
+//		buffG.clearRect(0, 0, 1190, 770);
+//		buffG.drawImage(glaun, 0, 0, this);
+//		g.drawImage(buffImg, 0, 0, this);
+//		
+//		repaint();	
+//	}
+	
+}
