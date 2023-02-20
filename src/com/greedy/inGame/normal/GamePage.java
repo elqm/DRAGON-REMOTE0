@@ -129,3 +129,6 @@ public class GamePage extends JFrame{
 	}
 
 }
+public class GamePage {
+
+}

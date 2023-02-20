@@ -5,7 +5,7 @@ import com.greedy.inGame.option.Time;
 public class Application {
 
 	public static void main(String[] args) {
-
+  
 //		new Description();
 		
 //		new GamePage(); 
@@ -13,6 +13,11 @@ public class Application {
 		new Time();
 		
 //		new GameOver();
+		
+	}
+
+}
+		new Description();
 		
 	}
 
