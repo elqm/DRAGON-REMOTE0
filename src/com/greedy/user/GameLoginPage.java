@@ -13,12 +13,12 @@ public class GameLoginPage  {
 		
 		JFrame mf = new JFrame("진격의 DRAGON");
 		
-		mf.setSize(700, 600);
+		mf.setSize(1080, 1080);
 		
 		mf.setLocationRelativeTo(null);
 		mf.setAutoRequestFocus(false);
 		
-		ImageIcon img = new ImageIcon("images/GameLoginPage1.png");
+		ImageIcon img = new ImageIcon("images/로그인화면.png");
 		
 		JPanel panel = new JPanel();
 		
@@ -26,32 +26,35 @@ public class GameLoginPage  {
 		
 		JLabel label = new JLabel(img);
 		label.setLocation(0, 0);
-		label.setSize(700, 570);
+		label.setSize(1080, 1050);
 		
 		JTextField id = new JTextField();
-		id.setBounds(200, 330, 330, 38);
+		id.setBounds(320, 610, 330, 60);
 		
 		
 		JTextField pwd = new JTextField();
-		pwd.setBounds(200, 380, 330, 38);
+		pwd.setBounds(320, 690, 330, 60);
 		
 		JButton btn1 = new JButton();
-		btn1.setBounds(60, 525, 100, 38);
+		btn1.setBounds(100, 950, 150, 60);
 		btn1.setContentAreaFilled(false);
 		btn1.setFocusPainted(false);
 		btn1.setBorderPainted(false);
 		
 		JButton btn2 = new JButton();
-		btn2.setBounds(310, 525, 100, 38);
+		btn2.setBounds(480, 950, 150, 60);
 		btn2.setContentAreaFilled(false);
 		btn2.setFocusPainted(false);
 		btn2.setBorderPainted(false);
 		
 		JButton btn3 = new JButton();
-		btn3.setBounds(560, 525, 100, 38);
+		btn3.setBounds(870, 950, 150, 60);
 		btn3.setContentAreaFilled(false);
 		btn3.setFocusPainted(false);
 		btn3.setBorderPainted(false);
+		
+		
+		
 		
 		panel.add(label);
 		mf.add(panel);
