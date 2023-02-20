@@ -11,10 +11,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class choiceGlanun {
+public class choiceHyton{
 	
 	
-	public void Glanun() {
+	public void Hyton() {
 
 
 		JFrame mF = new JFrame();
@@ -26,7 +26,7 @@ public class choiceGlanun {
 		
 	    JButton button = new JButton(); 
 
-		Image image = new ImageIcon("images/cg.PNG").getImage().getScaledInstance(1100, 700, 0);
+		Image image = new ImageIcon("images/ch.PNG").getImage().getScaledInstance(1100, 700, 0);
 		
 	    JLabel label = new JLabel(new ImageIcon(image));
 
@@ -41,8 +41,8 @@ public class choiceGlanun {
 	    button1.addActionListener(new ActionListener() {
 	        @Override
 	    	public void actionPerformed(ActionEvent e) {
-	        	gradeGlanun gG = new gradeGlanun();
-	        	gG.gradeGlanun();
+	        	gradeHyton Hyton = new gradeHyton();
+	        	Hyton.gradeHyton();
 	        	mF.setVisible(false);
 	        }
 	    });
