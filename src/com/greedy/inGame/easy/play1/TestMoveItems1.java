@@ -1,29 +1,19 @@
 package com.greedy.inGame.easy.play1;
 
-import java.awt.Graphics;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
-
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.Timer;
 
-public class TestMoveCharacter extends JPanel implements ActionListener {
+public class TestMoveItems1 extends JPanel implements ActionListener {
     private BufferedImage backgroundImage;
     private ImageIcon characterImage;
     private int x, y;
-    private Timer timer;
-    private JLabel watch1;
+    private JButton button1, button2;
     
-    public TestMoveCharacter() {
+    public TestMoveItems1() {
         try {
             backgroundImage = ImageIO.read(new File("images/easyBackground1.png")); // replace with your background image file path
         } catch (Exception e) {
@@ -33,22 +23,35 @@ public class TestMoveCharacter extends JPanel implements ActionListener {
         x = 100;
         y = 100;
         
-       
+        button1 = new JButton("Button 1");
+        button1.setBounds(50, 50, 100, 50);
+        button1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // handle button 1 action
+            }
+        });
+        add(button1);
         
-        timer = new Timer(10, this);
-        timer.start();
+        button2 = new JButton("Button 2");
+        button2.setBounds(150, 150, 100, 50);
+        button2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // handle button 2 action
+            }
+        });
+        add(button2);
         
         addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent e) {
                 int keyCode = e.getKeyCode();
                 if (keyCode == KeyEvent.VK_LEFT) {
-                    x -= 15;
+                    x -= 5;
                 } else if (keyCode == KeyEvent.VK_RIGHT) {
-                    x += 15;
+                    x += 5;
                 } else if (keyCode == KeyEvent.VK_UP) {
-                    y -= 15;
+                    y -= 5;
                 } else if (keyCode == KeyEvent.VK_DOWN) {
-                    y += 15;
+                    y += 5;
                 }
             }
         });
@@ -67,8 +70,8 @@ public class TestMoveCharacter extends JPanel implements ActionListener {
     
     public static void main(String[] args) {
         JFrame frame = new JFrame();
-        frame.add(new TestMoveCharacter());
-        frame.setSize(1400, 800); // set the size of the frame to match the background image size
+        frame.add(new TestMoveItems1());
+        frame.setSize(800, 600); // set the size of the frame to match the background image size
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
