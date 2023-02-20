@@ -18,9 +18,6 @@ public class GamePage extends JFrame{
 
 	private JFrame mf = new JFrame();
 
-	Image buffImg;
-	Graphics buffG;
-
 	public int xpos = 510;
 	public int ypos = 590;
 
@@ -51,7 +48,7 @@ public class GamePage extends JFrame{
 		JLabel glaunLb = new JLabel();
 		glaunLb.setIcon(new ImageIcon(glaun));
 		glaunLb.setBounds(xpos, ypos, 122, 118);
- 
+
 		JLabel normalLb = new JLabel();
 		normalLb.setIcon(new ImageIcon(normal));
 		normalLb.setBounds(460, 10, 213, 37);
@@ -98,7 +95,7 @@ public class GamePage extends JFrame{
 
 		mf.add(panel);
 
-
+		this.compInit();
 		mf.setVisible(true);
 		mf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -107,17 +104,29 @@ public class GamePage extends JFrame{
 			@Override
 			public void keyPressed(KeyEvent e) {
 				switch(e.getKeyCode()) {
+				case KeyEvent.VK_UP :
+					if(ypos > 0) {
+						glaunLb.setLocation(glaunLb.getX(), glaunLb.getY()-20);							
+						ypos-=20;
+					}
+					break;
+				case KeyEvent.VK_DOWN :
+					if(ypos < 620) {
+						glaunLb.setLocation(glaunLb.getX(), glaunLb.getY()+20);						
+						ypos+=20;
+					}
+					break;
 				case KeyEvent.VK_LEFT :
 					if(xpos > 0) {
-						glaunLb.setLocation(glaunLb.getX()-10, glaunLb.getY());							
-						xpos-=10;
+						glaunLb.setLocation(glaunLb.getX()-20, glaunLb.getY());							
+						xpos-=20;
 					}
 					repaint();
 					break;
 				case KeyEvent.VK_RIGHT :
-					if(xpos < 1060) {
-						glaunLb.setLocation(glaunLb.getX()+10, glaunLb.getY());							
-						xpos+=10;
+					if(xpos < 1050) {
+						glaunLb.setLocation(glaunLb.getX()+20, glaunLb.getY());							
+						xpos+=20;
 					}
 					break;
 				}
@@ -125,10 +134,87 @@ public class GamePage extends JFrame{
 
 		});
 
+		this.requestFocus();
+		setFocusable(true);
+
 
 	}
 
-}
-public class GamePage {
+
+	class MyLabel extends JLabel{
+		public int timing;
+		public int bkTiming;
+
+		Image life = new ImageIcon("images/firearrow.png").getImage().getScaledInstance(80, 80, 0);
+
+		//눈 속도조절
+		public MyLabel(){
+			this.timing = ((int)(Math.random()*400) + 200000);
+			this.bkTiming = timing;
+			this.setSize(80, 80);
+			this.setLocation((int)(Math.random()*1190),(int)(Math.random()*770));
+			this.setIcon(new ImageIcon(life));
+		}
+
+	}
+
+	private JButton button = new JButton(new ImageIcon());
+
+	private MyLabel[] labels = new MyLabel[]{
+			new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),
+			//						new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),
+			//						new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),
+			//						new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),
+			//						new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),
+			//						new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),
+			//						new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),
+			//						new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),new MyLabel(),
+
+	}; 
+
+
+	private void compInit(){
+
+
+		for(MyLabel tmp: labels){
+			this.add(tmp);
+		}
+		//쓰레드를 활용하여 눈 내리는 동작
+		Thread th = new Thread(){
+			public void run(){
+				int i =0;
+				while(true){
+					for(MyLabel tmp: labels){
+						if(tmp.timing-- == 0){
+							tmp.setLocation(tmp.getX(),tmp.getY()+1);
+							if(tmp.getY() > 700){
+								tmp.setLocation((int)(Math.random()*1190),0);
+							}
+							else if(tmp.getY() == 700){   //점수계산
+								i++;
+								System.out.println(i);  //점수계산  노출
+
+
+							}
+							
+						       //만약 주체와 눈의 좌표값이 일치하면 게임종료
+						       if(button.getLocation().equals(tmp.getLocation())){
+						        System.out.println("게임종료");
+						        System.exit(0);
+						       }
+
+							tmp.timing = tmp.bkTiming;
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}; th.start();
+
+	}
 
 }

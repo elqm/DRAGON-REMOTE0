@@ -1,4 +1,4 @@
-package com.greedy.InGame.play1;
+package com.greedy.inGame.easy.play1;
 
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
