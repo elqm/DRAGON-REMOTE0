@@ -40,7 +40,7 @@ public class choiceCharacter {
 	    button1.addActionListener(new ActionListener() {
 	        @Override
 	        public void actionPerformed(ActionEvent e) {
-	            choiceCharacter2 character2 = new choiceCharacter2();
+	            choiceCharacter2 character2 = new choiceCharacter2( );
 	            character2.display();
 	            mF.setVisible(false);
 	        }

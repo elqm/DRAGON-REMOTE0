@@ -18,7 +18,7 @@ public class choiceCharacter2 extends choiceCharacter {
 		JFrame mF = new JFrame();
 		mF.setBounds(300, 200, 1280, 750);
 		
-		JPanel panel2 = new JPanel();
+		JPanel panel2 = new JPanel(); 
 		panel2.setLayout(null);
 		mF.setResizable(false);
 		
