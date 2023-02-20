@@ -10,6 +10,8 @@ public class Application {
 		new choiceCharacter().display();
 //		new choiceCharacter2().display();
 		
-
+//		new gradeGlanun().gradeGlanun();
+//		new gradeZorg().gradeZorg();
+//		new gradeHyton().gradeHyton();
 	}
 }
