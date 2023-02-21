@@ -6,8 +6,8 @@ public class Application {
 
 		
     	new GameStartPage().display();
-		new GameLoginPage().display2();
-		new GameUserLoginPage().display3();
+//		new GameLoginPage().display2();
+//		new GameUserLoginPage().display3();
 	}
 
 }

@@ -1,5 +1,8 @@
 package com.greedy.user;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -11,12 +14,12 @@ public class GameUserLoginPage {
 
 public void display3() {
 		
-		JFrame mf = new JFrame("진격의 DRAGON");
+		JFrame mf3 = new JFrame("진격의 DRAGON");
 		
-		mf.setSize(1080, 1080);
+		mf3.setSize(1080, 1080);
 		
-		mf.setLocationRelativeTo(null);
-		mf.setAutoRequestFocus(false);
+		mf3.setLocationRelativeTo(null);
+		mf3.setAutoRequestFocus(false);
 		
 		ImageIcon img = new ImageIcon("images/회원가입창.png");
 		
@@ -62,12 +65,31 @@ public void display3() {
 		btn4.setFocusPainted(false);
 		btn4.setBorderPainted(false);
 		
-//		@Override
+
+		btn1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				GameStartPage start = new GameStartPage();
+				start.display();
+				mf3.setVisible(false);
+			}
+		});
 		
+		btn3.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				
+				
+			}
+		});
 		
 		
 		panel.add(label);
-		mf.add(panel);
+		mf3.add(panel);
 		panel.add(id);
 		panel.add(pwd);
 		panel.add(name);
@@ -75,8 +97,8 @@ public void display3() {
 		panel.add(btn2);
 		panel.add(btn3);
 		panel.add(btn4);
-		mf.setVisible(true);
-		mf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		mf3.setVisible(true);
+		mf3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
 }

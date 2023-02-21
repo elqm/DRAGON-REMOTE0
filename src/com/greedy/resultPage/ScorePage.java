@@ -1,7 +1,5 @@
-package com.greedy.user;
+package com.greedy.resultPage;
 
-import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -10,25 +8,20 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
-public class GameStartPage  {
-	private JTextField textField;
-	private JTextField textField_1;
-	private JLabel label;
-	
-	
-	public void  display() {
-		
+public class ScorePage {
+
+	public void display() {
 		
 		JFrame mf = new JFrame("진격의 DRAGON");
 		
-		mf.setSize(1080, 1080);
+		mf.setSize(600, 630);
+		
 		
 		mf.setLocationRelativeTo(null);
 		mf.setAutoRequestFocus(false);
 		
-		ImageIcon img = new ImageIcon("images/시작화면.png");
+		ImageIcon img = new ImageIcon("images/스코어화면.png");
 		
 		JPanel panel = new JPanel();
 		
@@ -36,31 +29,25 @@ public class GameStartPage  {
 		
 		JLabel label = new JLabel(img);
 		label.setLocation(0, 0);
-		label.setSize(1080, 1050);
-		
+		label.setSize(600, 600);
 		
 		JButton btn = new JButton();
-		btn.setBounds(300, 775, 500, 60);
+		btn.setBounds(255, 400, 100, 40);
 		btn.setContentAreaFilled(false);
 		btn.setFocusPainted(false);
 		btn.setBorderPainted(false);
-		
 		
 		btn.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-			GameLoginPage login = new GameLoginPage();
-			login.display2();
-			mf.setVisible(false);
 				
 			}
 		});
 		
-		
-		panel.add(label);
 		mf.add(panel);
+		panel.add(label);
 		panel.add(btn);
 		
 		mf.setVisible(true);
