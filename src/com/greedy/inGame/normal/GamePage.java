@@ -123,7 +123,7 @@ public class GamePage extends JFrame{
 
 		mf.add(panel);
 
-		mf.setVisible(true);
+		mf.setVisible(true); 
 		mf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
