@@ -59,7 +59,7 @@ public class easyGame3 extends JPanel implements ActionListener {
         if (characterX > WIDTH - characterImage.getWidth(null)) {
             characterX = WIDTH - characterImage.getWidth(null);
         }
-    }
+    } 
 
     private void moveWeapon() {
         weaponY += 7;
