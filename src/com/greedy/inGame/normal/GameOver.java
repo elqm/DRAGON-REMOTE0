@@ -1,6 +1,6 @@
 package com.greedy.inGame.normal;
 
-import java.awt.Font;
+
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,7 +13,6 @@ import javax.swing.JPanel;
 
 import com.greedy.design.PlayButton;
 import com.greedy.design.RoundedButton;
-import com.greedy.inGame.option.Time;
 
 public class GameOver extends JFrame {
 
@@ -62,7 +61,7 @@ public class GameOver extends JFrame {
 		panel.add(gameOverLb);
 		panel.add(bgLb);
 
-		mf.add(panel);
+		mf.add(panel); 
 
 
 		mf.setVisible(true);
