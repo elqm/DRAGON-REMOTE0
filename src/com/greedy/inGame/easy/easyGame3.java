@@ -21,7 +21,7 @@ public class easyGame3 extends JPanel implements ActionListener {
     JFrame frame = new JFrame("2D Game");
     
     public easyGame3() {
-        setPreferredSize(new Dimension(WIDTH, HEIGHT));
+        setPreferredSize(new Dimension(WIDTH, HEIGHT)); 
         setBackground(Color.WHITE);
         setFocusable(true);
         addKeyListener(new MyKeyAdapter());
