@@ -11,6 +11,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import com.greedy.inGame.normal.Description;
+
 public class gradeGlanun {
 	
 	
@@ -55,11 +57,11 @@ public class gradeGlanun {
 //			
 //			@Override
 //			public void actionPerformed(ActionEvent e) {
-//				choiceCharacter2 choice = new choiceCharacter2();
-//				choice.display();
-//				  mF.setVisible(false);
+//			 new Description();
+//		
+//				mF.setVisible(false);
 //			}
-//		});
+//			});
 //	   button2.addActionListener(new ActionListener() {
 //			
 //				@Override

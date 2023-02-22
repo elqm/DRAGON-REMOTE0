@@ -5,6 +5,8 @@ public class Application {
 	public static void main(String[] args) {
 		
 		new userSettingAll().setting();
+//		new characterStroty().story();
+//		new Hyton().Hyton();
 	}
 
 }
