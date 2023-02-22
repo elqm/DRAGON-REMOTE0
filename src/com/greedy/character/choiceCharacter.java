@@ -13,7 +13,6 @@ import javax.swing.JPanel;
 
 public class choiceCharacter {
 	
-	
 	public void display() {
 
 		JFrame mF = new JFrame();
@@ -21,7 +20,7 @@ public class choiceCharacter {
 	    mF.setBounds(300, 200, 1280, 750);
 
 	    JPanel panel = new JPanel();
-
+ 
 	    JButton button = new JButton(); 
 
 	    Image image = new ImageIcon("images/choiceCharacter.png").getImage().getScaledInstance(600, 400, 0);

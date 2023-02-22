@@ -8,16 +8,16 @@ public class Application {
   
 //		new Description();
 		
-//		new GamePage(); 
+		new GamePage(); 
 		
-		new Time();
+//		new Time();
 		
 //		new GameOver();
 		
 	}
 
 }
-		new Description();
+//		new Description();
 		
 	}
 

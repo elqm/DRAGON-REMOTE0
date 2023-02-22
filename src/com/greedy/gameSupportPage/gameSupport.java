@@ -32,7 +32,7 @@ public class gameSupport {
 		button.setBounds(370, 330 , 140, 60);
 		button.setBackground(Color.RED);
 		
-		panel.add(label);
+		panel.add(label); 
 		panel.add(button);
 		
 		
