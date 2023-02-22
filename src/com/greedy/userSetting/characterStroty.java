@@ -11,43 +11,43 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class userSettingAll{
-		
-		public void setting() {
-			
-		
+public class characterStroty{
 
-			JFrame mF = new JFrame();
-		mF.setBounds(500, 200, 1016, 750);
-		
+	public void story() {
+
+
+
+		JFrame mF = new JFrame();
+		mF.setBounds(300, 200, 1280, 750);
+
+
 		JPanel panel2 = new JPanel(); 
 		panel2.setLayout(null);
 		mF.setResizable(false);
-		
+
 		JButton button = new JButton(); 
-		
-		Image image = new ImageIcon("images/setting.PNG").getImage().getScaledInstance(1040, 750, 0);
-		
+
+		Image image = new ImageIcon("images/캐릭터스토리.png").getImage().getScaledInstance(1100, 700, 0);
+
 		JLabel label = new JLabel(new ImageIcon(image));
-		
-		JButton button1 = new JButton(new ImageIcon("images/playingAndStory.png"));
-		JButton button2 = new JButton(new ImageIcon("images/settingSound.png"));
-		JButton button3 = new JButton(new ImageIcon("images/count.png"));
-		JButton button4 = new JButton(new ImageIcon("images/back.png"));
-		
-		label.setSize(1000, 750);
-		button1.setBounds(330, 240, 360, 60);
-		button2.setBounds(330, 400, 360, 60);
-		button3.setBounds(330, 560, 360, 60);
-		button4.setBounds(90, 40, 50, 50);
-		panel2.setBounds(300,200,1050,750);
-		
+
+		JButton button1 = new JButton(new ImageIcon("images/선택.PNG"));
+		JButton button2 = new JButton(new ImageIcon("images/선택.PNG"));
+		JButton button3 = new JButton(new ImageIcon("images/선택.PNG"));
+		JButton button4 = new JButton(new ImageIcon("images/확인.png"));
+
+		label.setBounds(10, 10, 1200, 700);
+		button1.setBounds(230, 585, 100, 40);
+		button2.setBounds(490, 585, 100, 40);
+		button3.setBounds(760, 585, 100, 40);
+		button4.setBounds(930, 580, 125, 50);
+
 		button1.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				characterStroty story = new characterStroty();
-				story.story();
+				Glaun glaun = new Glaun();
+				glaun.Glaun();
 				mF.setVisible(false);
 			}
 		});
@@ -56,7 +56,8 @@ public class userSettingAll{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
+				Zorg zorg = new Zorg();
+				zorg.Zorg();
 				mF.setVisible(false);
 			}
 		});
@@ -65,6 +66,8 @@ public class userSettingAll{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				Hyton hyton = new Hyton();
+				hyton.Hyton();
 
 				mF.setVisible(false);
 			}
@@ -73,24 +76,23 @@ public class userSettingAll{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-		
+				userSettingAll setting = new userSettingAll();
+				setting.setting();
 
 				mF.setVisible(false);
 			}
 		});
-		
-		
-		
+
 		panel2.add(button1); 
 		panel2.add(button2);
 		panel2.add(button3);
 		panel2.add(button4);
 		panel2.add(label);
-		
+
 		mF.add(panel2);
-		
+
 		mF.setVisible(true);
 		mF.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		}
+	}
 
 }
