@@ -118,7 +118,7 @@ public class GamePage extends JFrame{
 		panel.add(lifeLb);
 		panel.add(timeLb);
 		panel.add(goldLb);
-		panel.add(preferencesLb);
+		panel.add(preferencesLb); 
 		panel.add(bgLb);
 
 		mf.add(panel);
