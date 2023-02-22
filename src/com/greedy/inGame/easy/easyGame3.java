@@ -123,3 +123,4 @@ public class easyGame3 extends JPanel implements ActionListener {
         frame.setVisible(true);
     }
 }
+
