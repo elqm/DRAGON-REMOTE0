@@ -2,6 +2,8 @@ package com.greedy.user;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -20,47 +22,46 @@ public class GameStartPage  {
 		
 		
 		JFrame mf = new JFrame("진격의 DRAGON");
-		mf.setAlwaysOnTop(true);
 		
 		mf.setSize(1080, 1080);
 		
+//		mf.setLocationRelativeTo(null);
+//		mf.setAutoRequestFocus(false);
 		
+		ImageIcon img = new ImageIcon("images/시작화면.png");
 		
 		JPanel panel = new JPanel();
 		
 		panel.setLayout(null);
 		
-		label = new JLabel(new ImageIcon("C:\\Users\\tjoeun\\Desktop\\로그인화면.png"));
+		JLabel label = new JLabel(img);
 		label.setLocation(0, 0);
 		label.setSize(1080, 1050);
 		
-	
-	
+		
+		JButton startbtn = new JButton();
+		startbtn.setBounds(300, 775, 500, 60);
+		startbtn.setContentAreaFilled(false);
+		startbtn.setFocusPainted(false);
+		startbtn.setBorderPainted(false);
+		
+		
+		startbtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+			GameLoginPage login = new GameLoginPage();
+			login.display2();
+			mf.setVisible(false);
+				
+			}
+		});
+		
 		
 		panel.add(label);
-		mf.getContentPane().add(panel);
-		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(481, 951, 155, 63);
-		panel.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("New button");
-		btnNewButton_1.setBounds(91, 951, 155, 63);
-		panel.add(btnNewButton_1);
-		
-		JButton btnNewButton_2 = new JButton("New button");
-		btnNewButton_2.setBounds(860, 951, 155, 63);
-		panel.add(btnNewButton_2);
-		
-		textField = new JTextField();
-		textField.setBounds(91, 810, 507, 69);
-		panel.add(textField);
-		textField.setColumns(10);
-		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(68, 562, 507, 69);
-		panel.add(textField_1);
+		mf.add(panel);
+		panel.add(startbtn);
 		
 		mf.setVisible(true);
 		mf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

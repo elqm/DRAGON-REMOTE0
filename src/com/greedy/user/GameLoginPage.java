@@ -1,5 +1,8 @@
 package com.greedy.user;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -11,12 +14,12 @@ public class GameLoginPage  {
 
 	public void display2() {
 		
-		JFrame mf = new JFrame("진격의 DRAGON");
+		JFrame mf2 = new JFrame("진격의 DRAGON");
 		
-		mf.setSize(1080, 1080);
+		mf2.setSize(1080, 1080);
 		
-		mf.setLocationRelativeTo(null);
-		mf.setAutoRequestFocus(false);
+//		mf2.setLocationRelativeTo(null);
+//		mf2.setAutoRequestFocus(false);
 		
 		ImageIcon img = new ImageIcon("images/로그인화면.png");
 		
@@ -35,36 +38,59 @@ public class GameLoginPage  {
 		JTextField pwd = new JTextField();
 		pwd.setBounds(320, 690, 330, 60);
 		
-		JButton btn1 = new JButton();
-		btn1.setBounds(100, 950, 150, 60);
-		btn1.setContentAreaFilled(false);
-		btn1.setFocusPainted(false);
-		btn1.setBorderPainted(false);
+		JButton gohomebtn = new JButton();
+		gohomebtn.setBounds(100, 950, 150, 60);
+		gohomebtn.setContentAreaFilled(false);
+		gohomebtn.setFocusPainted(false);
+		gohomebtn.setBorderPainted(false);
 		
-		JButton btn2 = new JButton();
-		btn2.setBounds(480, 950, 150, 60);
-		btn2.setContentAreaFilled(false);
-		btn2.setFocusPainted(false);
-		btn2.setBorderPainted(false);
+		JButton userloginbtn = new JButton();
+		userloginbtn.setBounds(480, 950, 150, 60);
+		userloginbtn.setContentAreaFilled(false);
+		userloginbtn.setFocusPainted(false);
+		userloginbtn.setBorderPainted(false);
 		
-		JButton btn3 = new JButton();
-		btn3.setBounds(870, 950, 150, 60);
-		btn3.setContentAreaFilled(false);
-		btn3.setFocusPainted(false);
-		btn3.setBorderPainted(false);
+		JButton gamestartbtn = new JButton();
+		gamestartbtn.setBounds(870, 950, 150, 60);
+		gamestartbtn.setContentAreaFilled(false);
+		gamestartbtn.setFocusPainted(false);
+		gamestartbtn.setBorderPainted(false);
 		
 		
+		gohomebtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				GameStartPage start = new GameStartPage();
+				start.display();
+				mf2.setVisible(false);
+			}
+		});
 		
+		
+		userloginbtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			
+				GameUserLoginPage userLogin = new GameUserLoginPage();
+				userLogin.display3();
+				mf2.setVisible(false);
+			}
+		});
+		
+	
 		
 		panel.add(label);
-		mf.add(panel);
+		mf2.add(panel);
 		panel.add(id);
 		panel.add(pwd);
-		panel.add(btn1);
-		panel.add(btn2);
-		panel.add(btn3);
+		panel.add(gohomebtn);
+		panel.add(userloginbtn);
+		panel.add(gamestartbtn);
 		
-		mf.setVisible(true);
-		mf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		mf2.setVisible(true);
+		mf2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 }
