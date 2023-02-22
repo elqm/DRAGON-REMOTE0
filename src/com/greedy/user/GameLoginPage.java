@@ -18,8 +18,8 @@ public class GameLoginPage  {
 		
 		mf2.setSize(1080, 1080);
 		
-		mf2.setLocationRelativeTo(null);
-		mf2.setAutoRequestFocus(false);
+//		mf2.setLocationRelativeTo(null);
+//		mf2.setAutoRequestFocus(false);
 		
 		ImageIcon img = new ImageIcon("images/로그인화면.png");
 		
@@ -38,26 +38,26 @@ public class GameLoginPage  {
 		JTextField pwd = new JTextField();
 		pwd.setBounds(320, 690, 330, 60);
 		
-		JButton btn1 = new JButton();
-		btn1.setBounds(100, 950, 150, 60);
-		btn1.setContentAreaFilled(false);
-		btn1.setFocusPainted(false);
-		btn1.setBorderPainted(false);
+		JButton gohomebtn = new JButton();
+		gohomebtn.setBounds(100, 950, 150, 60);
+		gohomebtn.setContentAreaFilled(false);
+		gohomebtn.setFocusPainted(false);
+		gohomebtn.setBorderPainted(false);
 		
-		JButton btn2 = new JButton();
-		btn2.setBounds(480, 950, 150, 60);
-		btn2.setContentAreaFilled(false);
-		btn2.setFocusPainted(false);
-		btn2.setBorderPainted(false);
+		JButton userloginbtn = new JButton();
+		userloginbtn.setBounds(480, 950, 150, 60);
+		userloginbtn.setContentAreaFilled(false);
+		userloginbtn.setFocusPainted(false);
+		userloginbtn.setBorderPainted(false);
 		
-		JButton btn3 = new JButton();
-		btn3.setBounds(870, 950, 150, 60);
-		btn3.setContentAreaFilled(false);
-		btn3.setFocusPainted(false);
-		btn3.setBorderPainted(false);
+		JButton gamestartbtn = new JButton();
+		gamestartbtn.setBounds(870, 950, 150, 60);
+		gamestartbtn.setContentAreaFilled(false);
+		gamestartbtn.setFocusPainted(false);
+		gamestartbtn.setBorderPainted(false);
 		
 		
-		btn1.addActionListener(new ActionListener() {
+		gohomebtn.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -69,7 +69,7 @@ public class GameLoginPage  {
 		});
 		
 		
-		btn2.addActionListener(new ActionListener() {
+		userloginbtn.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -80,21 +80,15 @@ public class GameLoginPage  {
 			}
 		});
 		
-		btn3.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
+	
 		
 		panel.add(label);
 		mf2.add(panel);
 		panel.add(id);
 		panel.add(pwd);
-		panel.add(btn1);
-		panel.add(btn2);
-		panel.add(btn3);
+		panel.add(gohomebtn);
+		panel.add(userloginbtn);
+		panel.add(gamestartbtn);
 		
 		mf2.setVisible(true);
 		mf2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

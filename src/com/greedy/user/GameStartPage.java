@@ -25,8 +25,8 @@ public class GameStartPage  {
 		
 		mf.setSize(1080, 1080);
 		
-		mf.setLocationRelativeTo(null);
-		mf.setAutoRequestFocus(false);
+//		mf.setLocationRelativeTo(null);
+//		mf.setAutoRequestFocus(false);
 		
 		ImageIcon img = new ImageIcon("images/시작화면.png");
 		
@@ -39,14 +39,14 @@ public class GameStartPage  {
 		label.setSize(1080, 1050);
 		
 		
-		JButton btn = new JButton();
-		btn.setBounds(300, 775, 500, 60);
-		btn.setContentAreaFilled(false);
-		btn.setFocusPainted(false);
-		btn.setBorderPainted(false);
+		JButton startbtn = new JButton();
+		startbtn.setBounds(300, 775, 500, 60);
+		startbtn.setContentAreaFilled(false);
+		startbtn.setFocusPainted(false);
+		startbtn.setBorderPainted(false);
 		
 		
-		btn.addActionListener(new ActionListener() {
+		startbtn.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -61,7 +61,7 @@ public class GameStartPage  {
 		
 		panel.add(label);
 		mf.add(panel);
-		panel.add(btn);
+		panel.add(startbtn);
 		
 		mf.setVisible(true);
 		mf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
