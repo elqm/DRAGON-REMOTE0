@@ -17,8 +17,10 @@ public class easyGame3 extends JPanel implements ActionListener {
     private int characterX, characterY, weaponX, weaponY;
     private int score = 5;
     private JLabel scoreLabel;
+//    private boolean gameover;
 
-    JFrame frame = new JFrame("2D Game");
+//    JFrame frame = new JFrame("2D Game");
+    JPanel panel = new JPanel();
     
     public easyGame3() {
         setPreferredSize(new Dimension(WIDTH, HEIGHT)); 
@@ -32,7 +34,7 @@ public class easyGame3 extends JPanel implements ActionListener {
     }
 
     private void loadImages() {
-        backgroundImage = new ImageIcon("images/easyBackground.png").getImage();
+        backgroundImage = new ImageIcon("images/easyBackground1.png").getImage();
         characterImage = new ImageIcon("images/dragon1.png").getImage();
         weaponImage = new ImageIcon("images/easyarrow.png").getImage();
     }
@@ -60,6 +62,8 @@ public class easyGame3 extends JPanel implements ActionListener {
             characterX = WIDTH - characterImage.getWidth(null);
         }
     }
+    
+    
 
     private void moveWeapon() {
         weaponY += 7;
@@ -77,11 +81,13 @@ public class easyGame3 extends JPanel implements ActionListener {
             score--;
             scoreLabel.setText("Score: " + score);
             if (score == 0) {
-            	frame.dispose();
-            	frame.setVisible(false);
-//            	System.exit(0);
-            	new GameOver();
+                timer.stop();
+                JOptionPane.showMessageDialog(null, "Game over!");
             }
+            	  
+         
+//            Toolkit.getDefaultToolkit().sync();
+//            g.dispose();
         } 
     }
 
