@@ -56,8 +56,10 @@ public class userSettingAll{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				userSound sound = new userSound();
+				sound.Sound();
 
-				mF.setVisible(false);
+			
 			}
 		});
 
@@ -65,8 +67,10 @@ public class userSettingAll{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				show show = new show();
+				show.show();
 
-				mF.setVisible(false);
+				
 			}
 		});
 		button4.addActionListener(new ActionListener() {
