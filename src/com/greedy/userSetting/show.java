@@ -12,12 +12,13 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
 
-public class userSound {
+public class show {
 
-	public void  Sound() {
+	public void  show() {
 	
-		JFrame mF = new JFrame();
-		mF.setBounds(820,450,401,300);
+		JFrame mF = new JFrame();		
+		mF.setLocation(820, 450);
+		mF.setSize(400,300);
 		
 		
 		JPanel panel2 = new JPanel(); 
@@ -26,25 +27,22 @@ public class userSound {
 		
 		JButton button = new JButton(); 
 		
-		Image image = new ImageIcon("images/사운드설정.PNG").getImage();
+		Image image = new ImageIcon("images/show.PNG").getImage();
 		
 		JLabel label = new JLabel(new ImageIcon(image));
 		
 		JButton button1 = new JButton(new ImageIcon("images/Frame 12.png"));
-		JRadioButton on = new JRadioButton("켜기");
-		JRadioButton off = new JRadioButton("끄기");
 		
 		
 		
-		on.setBounds(130,120,70,30);
-		off.setBounds(220, 120, 70, 30);
-		label.setBounds(-10, -70,400, 400);
-		button1.setBounds(160,200,70, 30);
+		
+	
+	
+		label.setLocation(-10, 0);
+		label.setSize(400,270);
+		button1.setBounds(160,220,70, 30);
 		panel2.setSize(1050,750);
-		on.setContentAreaFilled(false);
-		on.setFocusPainted(false);
-		off.setContentAreaFilled(false);
-		off.setFocusPainted(false);
+		
 		
 		button1.addActionListener(new ActionListener() {
 			
@@ -56,8 +54,7 @@ public class userSound {
 		});
 
 		
-		panel2.add(on);
-		panel2.add(off);
+		
 		panel2.add(button1); 
 		panel2.add(label);
 		mF.add(panel2);

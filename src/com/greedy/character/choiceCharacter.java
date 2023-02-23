@@ -12,6 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import com.greedy.user.GameStartPage;
 import com.greedy.userSetting.userSettingAll;
 
 public class choiceCharacter {
@@ -55,10 +56,13 @@ public class choiceCharacter {
 				userSettingAll user = new userSettingAll();
 				user.setting();
 
+			
 				button3.addActionListener(new ActionListener() {
-
-					@Override
-					public void actionPerformed(ActionEvent e) {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			GameStartPage start = new GameStartPage();
+			start.display();
+						
 
 					}
 				});

@@ -7,6 +7,8 @@ public class Application {
 		new userSettingAll().setting();
 //		new characterStroty().story();
 //		new Hyton().Hyton();
+//		new userSound().Sound();
+//		new show().show();
 	}
 
 }
