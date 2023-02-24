@@ -11,7 +11,7 @@ public class RankingPage {
 	public void display2() {
 		
 		JFrame mf2 = new JFrame("진격의 DRAGON");
-		
+		mf2.setLocation(600, 200);
 		mf2.setSize(600, 630);
 		
 		

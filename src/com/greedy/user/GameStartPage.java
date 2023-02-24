@@ -22,7 +22,7 @@ public class GameStartPage  {
 		
 		
 		JFrame mf = new JFrame("진격의 DRAGON");
-		
+		mf.setLocation(400, 0);
 		mf.setSize(1080, 1080);
 		
 //		mf.setLocationRelativeTo(null);

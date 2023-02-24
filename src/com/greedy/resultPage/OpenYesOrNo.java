@@ -2,6 +2,8 @@ package com.greedy.resultPage;
 
 import java.awt.BorderLayout;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -17,6 +19,7 @@ public class OpenYesOrNo {
 	public void radio() {
 		
 		JFrame rf = new JFrame("공개여부 설정");
+		rf.setLocation(790, 450);
 		rf.setSize(240, 170);
 		
 		Image img = new ImageIcon("images//공개여부.png").getImage();
@@ -62,12 +65,24 @@ public class OpenYesOrNo {
 //		panel.add(btn);
 		
 		
+	
+		
+		btn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			
+				
+				ScorePage sp = new ScorePage();
+				rf.setVisible(false);
+				
+			}
+		});
+		
 		rf.setVisible(true);
 		rf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 	}
 	
-	public static void main(String[] args) {
-		new OpenYesOrNo().radio();
-	}
+	
 }
