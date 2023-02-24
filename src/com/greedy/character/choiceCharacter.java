@@ -56,16 +56,17 @@ public class choiceCharacter {
 				userSettingAll user = new userSettingAll();
 				user.setting();
 
+				
+			}
+		});
 			
 				button3.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 			GameStartPage start = new GameStartPage();
 			start.display();
+			mF.setVisible(false);
 						
-
-					}
-				});
 			}
 		});
 
