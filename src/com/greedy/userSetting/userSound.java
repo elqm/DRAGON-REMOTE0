@@ -11,6 +11,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
+import com.greedy.character.choiceCharacter;
+
 
 public class userSound {
 
@@ -51,6 +53,17 @@ public class userSound {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 			userSettingAll All = new userSettingAll();
+		
+			mF.setVisible(false);
+			}
+		});
+		
+		button1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			choiceCharacter All = new choiceCharacter();
+			
 			mF.setVisible(false);
 			}
 		});

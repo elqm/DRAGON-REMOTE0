@@ -68,6 +68,7 @@ public class userSettingAll{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				show show = new show();
+				
 				show.show();
 
 				
