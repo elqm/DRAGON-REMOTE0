@@ -10,12 +10,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import com.greedy.character.choiceCharacter;
+
 public class GameUserLoginPage {
 
 public void display3() {
 		
 		JFrame mf3 = new JFrame("진격의 DRAGON");
-		
+		mf3.setLocation(400, 0);
 		mf3.setSize(1080, 1080);
 		
 //		mf3.setLocationRelativeTo(null);
@@ -43,9 +45,9 @@ public void display3() {
 		
 		JButton gohomebtn = new JButton();
 		gohomebtn.setBounds(100, 950, 150, 60);
-		gohomebtn.setContentAreaFilled(false);
-		gohomebtn.setFocusPainted(false);
-   	    gohomebtn.setBorderPainted(false);
+//		gohomebtn.setContentAreaFilled(false);
+//		gohomebtn.setFocusPainted(false);
+//   	    gohomebtn.setBorderPainted(false);
 		
 		JButton userloginbtn = new JButton();
 		userloginbtn.setBounds(490, 950, 150, 60);
@@ -82,6 +84,10 @@ public void display3() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
+						
+			choiceCharacter cc = new choiceCharacter();
+				cc.display();
+			mf3.setVisible(false);
 				
 				
 			}

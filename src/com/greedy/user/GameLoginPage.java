@@ -10,12 +10,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import com.greedy.character.choiceCharacter;
+
 public class GameLoginPage  {
 
 	public void display2() {
 		
 		JFrame mf2 = new JFrame("진격의 DRAGON");
-		
+		mf2.setLocation(400, 0);
 		mf2.setSize(1080, 1080);
 		
 //		mf2.setLocationRelativeTo(null);
@@ -80,6 +82,16 @@ public class GameLoginPage  {
 			}
 		});
 		
+		gamestartbtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				choiceCharacter cc = new choiceCharacter();
+				cc.display();
+				mf2.setVisible(false);
+			}
+		});
 	
 		
 		panel.add(label);

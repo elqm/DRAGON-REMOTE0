@@ -4,9 +4,10 @@ public class Application {
 
 	public static void main(String[] args) {
 
-//		new ScorePage().display();
+
+		new ScorePage().display();
 //		new RankingPage().display2();
-		new OpenYesOrNo().radio();
+//		new OpenYesOrNo().radio();
 	}
 
 }
