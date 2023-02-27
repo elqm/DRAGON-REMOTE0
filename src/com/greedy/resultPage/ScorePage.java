@@ -15,7 +15,7 @@ import com.greedy.inGame.easy.easyGame3;
 
 public class ScorePage {
 
-	easyGame3 easy = new easyGame3();
+//	easyGame3 easy = new easyGame3();
 	
 	public void display() {
 		Font font = new Font("궁서체", Font.BOLD, 30);
@@ -37,7 +37,7 @@ public class ScorePage {
 		label.setSize(600, 600);
 		
 		JLabel label1 = new JLabel();
-		label1.setText("" + easy.displayScore());
+//		label1.setText("" + easy.displayScore());
 		label1.setLocation(360, 181);
 		label1.setSize(30, 30);
 		label1.setFont(font);
