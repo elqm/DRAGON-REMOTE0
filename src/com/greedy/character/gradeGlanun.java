@@ -1,6 +1,7 @@
 package com.greedy.character;
 
 
+
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,7 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import com.greedy.inGame.normal.Description;
+import com.greedy.inGame.easy.EasyDescription;
 
 public class gradeGlanun {
 	
@@ -21,6 +22,7 @@ public class gradeGlanun {
 
 		JFrame mF = new JFrame();
 	    mF.setBounds(300, 200, 1280, 750);
+		mF.setLocationRelativeTo(null);
 
 	    JPanel panel = new JPanel();
 	    panel.setLayout(null);
@@ -46,12 +48,13 @@ public class gradeGlanun {
 	    button4.setBounds(100, 30, 70, 70);
 		   
 		    
-//	    button1.addActionListener(new ActionListener() {
-//	        @Override
-//	    	public void actionPerformed(ActionEvent e) {
-//	        	mF.setVisible(false);
-//	        }
-//	    });
+	    button1.addActionListener(new ActionListener() {
+	        @Override
+	    	public void actionPerformed(ActionEvent e) {
+	        	mF.setVisible(false);
+	        	new EasyDescription();
+	        }
+	    });
 //	    
 //	    button2.addActionListener(new ActionListener() {
 //			

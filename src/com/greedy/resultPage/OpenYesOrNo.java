@@ -13,6 +13,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
+import com.greedy.ranking.RankingPage;
+
 public class OpenYesOrNo {
 	// 이미지 넣기 수정
 
@@ -21,6 +23,7 @@ public class OpenYesOrNo {
 		JFrame rf = new JFrame("공개여부 설정");
 		rf.setLocation(790, 450);
 		rf.setSize(240, 170);
+		rf.setLocationRelativeTo(null);
 		
 		Image img = new ImageIcon("images//공개여부.png").getImage();
 		JPanel panel = new JPanel();
@@ -72,9 +75,8 @@ public class OpenYesOrNo {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 			
-				
-				ScorePage sp = new ScorePage();
-				rf.setVisible(false);
+				rf.dispose();
+				new RankingPage().RankingPage();
 				
 			}
 		});

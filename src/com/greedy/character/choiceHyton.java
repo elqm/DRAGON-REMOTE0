@@ -19,6 +19,7 @@ public class choiceHyton{
 
 		JFrame mF = new JFrame();
 	    mF.setBounds(300, 200, 1280, 750);
+		mF.setLocationRelativeTo(null);
 
 	    JPanel panel = new JPanel();
 	    panel.setLayout(null);

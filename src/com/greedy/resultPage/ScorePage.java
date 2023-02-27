@@ -1,5 +1,7 @@
 package com.greedy.resultPage;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -8,18 +10,20 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
+
+import com.greedy.inGame.easy.easyGame3;
 
 public class ScorePage {
 
+	easyGame3 easy = new easyGame3();
+	
 	public void display() {
+		Font font = new Font("궁서체", Font.BOLD, 30);
 		
 		JFrame mf = new JFrame("진격의 DRAGON");
 		mf.setLocation(600, 200);
 		mf.setSize(600, 630);
-		
-//		
-//		mf.setLocationRelativeTo(null);
+		mf.setLocationRelativeTo(null);
 //		mf.setAutoRequestFocus(false);
 		
 		ImageIcon img = new ImageIcon("images/스코어화면.png");
@@ -31,6 +35,13 @@ public class ScorePage {
 		JLabel label = new JLabel(img);
 		label.setLocation(0, 0);
 		label.setSize(600, 600);
+		
+		JLabel label1 = new JLabel();
+		label1.setText("" + easy.displayScore());
+		label1.setLocation(360, 181);
+		label1.setSize(30, 30);
+		label1.setFont(font);
+		label1.setForeground(Color.WHITE);
 		
 		JButton btn = new JButton();
 		btn.setBounds(255, 400, 100, 40);
@@ -52,9 +63,10 @@ public class ScorePage {
 			}
 		});
 		
-		mf.add(panel);
-		panel.add(label);
 		panel.add(btn);
+		panel.add(label1);
+		panel.add(label);
+		mf.add(panel);
 		
 		mf.setVisible(true);
 		mf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

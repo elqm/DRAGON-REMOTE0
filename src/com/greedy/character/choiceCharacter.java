@@ -24,7 +24,8 @@ public class choiceCharacter {
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
 		mF.setResizable(false);
-
+		mF.setLocationRelativeTo(null);
+		
 		JButton button = new JButton(); 
 
 
