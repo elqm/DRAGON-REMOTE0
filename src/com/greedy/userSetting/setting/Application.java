@@ -23,5 +23,5 @@ public class Application {
 			default : System.out.println("잘못된 메뉴를 선택하셨습니다.");
 			}
 		}while(true);
-		}
+		 }
 	}
