@@ -1,9 +1,22 @@
 package com.greedy.inGame.easy.play1;
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Random;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.Timer;
+
+import com.greedy.inGame.normal.GameOver;
 
 public class easyGame6 extends JPanel implements ActionListener {
 
@@ -137,7 +150,8 @@ public class easyGame6 extends JPanel implements ActionListener {
         
         if (score == 0) {
             gameover = true;
-            timer.stop();       							
+            timer.stop();
+            new GameOver();
         }
         
         repaint();

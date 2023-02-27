@@ -76,8 +76,8 @@ public class GameLoginPage  {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 			
-				GameUserLoginPage userLogin = new GameUserLoginPage();
-				userLogin.display3();
+				GameUserRegistPage userRegist = new GameUserRegistPage();
+				userRegist.display3();
 				mf2.setVisible(false);
 			}
 		});

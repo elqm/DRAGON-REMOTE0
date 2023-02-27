@@ -1,6 +1,7 @@
 package com.greedy.inGame.easy;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -34,7 +35,7 @@ public class easyGame3 extends JPanel implements ActionListener {
 	private int[] weaponXArr = {weaponX1, weaponX2, weaponX3, weaponX4, weaponX5, weaponX6, weaponX7, weaponX8};
 	private int weaponY1, weaponY2, weaponY3, weaponY4, weaponY5, weaponY6, weaponY7, weaponY8;	
 	private int[] weaponYArr = {weaponY1, weaponY2, weaponY3, weaponY4, weaponY5, weaponY6, weaponY7, weaponY8};
-	private int lifeScore = 10;
+	private int lifeScore = 1;
 	private int goldScore = 0;
 	private int timeScore = 0;
 	private int totalScore = 0;
@@ -42,8 +43,12 @@ public class easyGame3 extends JPanel implements ActionListener {
 	private JLabel min, colon, sec;
 	private int mm, ss, t=0;
 	private int sTime, rTime, cTime;
+    private boolean gameover;
 
 	public easyGame3() {
+		
+        gameover = false;
+		
 		Font font = new Font("궁서체", Font.BOLD, 50);
 
 		Image easy = new ImageIcon("images/easymode.png").getImage().getScaledInstance(178, 49, 0);
@@ -63,10 +68,11 @@ public class easyGame3 extends JPanel implements ActionListener {
 
 		setLayout(null);
 
-		//		setPreferredSize(new Dimension(WIDTH, HEIGHT)); 
-		//		setSize(WIDTH, HEIGHT);
+		setPreferredSize(new Dimension(WIDTH, HEIGHT)); 
+		setSize(WIDTH, HEIGHT);
 		setBackground(Color.WHITE);
-		setFocusable(true);
+        setFocusable(true);
+        requestFocus();
 		addKeyListener(new MyKeyAdapter());
 
 		easyImageLb.setIcon(new ImageIcon(easy));
@@ -237,8 +243,10 @@ public class easyGame3 extends JPanel implements ActionListener {
 				lifeScore -= 1;
 				lifeScoreLb.setText("" + lifeScore);
 				if (lifeScore == 0) {
+		            gameover = true;
 					timer.stop();
 					th.interrupt();
+					
 //					EasyMainFrame mf = new EasyMainFrame();
 //					EasyMainFrame.dispose();
 					new GameOver();
