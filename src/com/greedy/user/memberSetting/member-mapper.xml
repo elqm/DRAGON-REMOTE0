@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemberMapper">
+<!-- dto에 있는 값이랑 cloumn이랑 연결-->
+
+	<resultMap type="com.greedy.user.memberSetting.member-mapper" id="memberLogin">
+		<id property="userId" column="USER_ID"/>
+		<result property=""/>
+		
+	</resultMap>
+</mapper>
