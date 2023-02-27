@@ -4,14 +4,22 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.sound.sampled.Clip;
+import javax.swing.AbstractCellEditor;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.DataLine;
+
 
 import com.greedy.character.choiceCharacter;
+import com.greedy.music.musicOn;
 
 
 public class userSound {
@@ -33,8 +41,8 @@ public class userSound {
 		JLabel label = new JLabel(new ImageIcon(image));
 		
 		JButton button1 = new JButton(new ImageIcon("images/Frame 12.png"));
-		JRadioButton on = new JRadioButton("켜기");
-		JRadioButton off = new JRadioButton("끄기");
+		JButton on = new JButton("켜기");
+		JButton off = new JButton("끄기");
 		
 		
 		
@@ -68,6 +76,36 @@ public class userSound {
 			}
 		});
 
+		on.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+		
+				        musicOn musicPlayer = new musicOn();
+				        musicPlayer.musicOn();
+				        
+				       
+				        while (true) {
+				            try {
+				                Thread.sleep(94000);
+				                musicPlayer.musicOn();
+				            } catch (InterruptedException e1) {
+				                e1.printStackTrace();				                
+				            }
+				           
+				        }
+				         }
+		});
+		
+			off.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+		
+				
+			}
+		});
+		
 		
 		panel2.add(on);
 		panel2.add(off);
