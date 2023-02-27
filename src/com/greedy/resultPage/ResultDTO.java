@@ -1,6 +1,6 @@
-package com.greedy.userSetting.setting;
+package com.greedy.resultPage;
 
-public class UserDTO {
+public class ResultDTO {
 
 	private String resultNum;
 	private int score;
@@ -8,7 +8,16 @@ public class UserDTO {
 	private boolean open;
 	private String userName;
 	
-	public UserDTO() {}
+	public ResultDTO() {}
+
+	public ResultDTO(String resultNum, int score, int mamberNum, boolean open, String userName) {
+		super();
+		this.resultNum = resultNum;
+		this.score = score;
+		this.memberNum = mamberNum;
+		this.open = open;
+		this.userName = userName;
+	}
 
 	public String getResultNum() {
 		return resultNum;
@@ -49,20 +58,10 @@ public class UserDTO {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-
+	
 	@Override
 	public String toString() {
-		return "UserDTO [resultNum=" + resultNum + ", score=" + score + ", memberNum=" + memberNum + ", open=" + open
-				+ ", userName=" + userName + "]";
-	}
-
-	public UserDTO(String resultNum, int score, int mamberNum, boolean open, String userName) {
-		super();
-		this.resultNum = resultNum;
-		this.score = score;
-		this.memberNum = mamberNum;
-		this.open = open;
-		this.userName = userName;
+		return userName + "]" + "              " + "[" + score;
 	}
 	
 }

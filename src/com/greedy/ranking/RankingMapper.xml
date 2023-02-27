@@ -1,0 +1,130 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="RankingMapper">
+  
+  	<resultMap id="rankingResultMap" type="com.greedy.ranking.RankingDTO">
+ 		<id property="resultNum" column="RESULT_NUM"/>
+  		<result property="score" column="RESULT_SCORE"/>
+  		<result property="memberNum" column="MEMBER_NUM"/>
+  		<result property="open" column="OPEN_YN"/>
+  		<result property="userName" column="USER_NAME"/>
+  		<result property="gradeKind" column="GRADE_KIND"/>
+  		
+  	</resultMap>
+  	<select id="selectFirstRank" resultMap="rankingResultMap">
+  		SELECT
+  			   A.USER_NAME
+             , A.RESULT_SCORE
+  		  FROM (
+       			SELECT
+       				   ROW_NUMBER() OVER(
+                      ORDER BY B.RESULT_SCORE DESC
+                      ) ROW_NUM
+   					 , B.RESULT_NUM
+  					 , B.RESULT_SCORE
+  					 , B.MEMBER_NUM
+  					 , B.OPEN_YN
+  					 , B.USER_NAME
+  					 , B.GRADE_KIND
+         		  FROM GAME_RESULT B
+        		 WHERE B.OPEN_YN = 'Y'
+        		   AND B.GRADE_KIND = 'E'
+         		 ORDER BY B.RESULT_SCORE DESC
+        		) A
+  		 WHERE A.ROW_NUM = 1
+  	</select>
+  	
+  	  	<select id="selectSecondRank" resultMap="rankingResultMap">
+  		SELECT
+  			   A.USER_NAME
+             , A.RESULT_SCORE
+  		  FROM (
+       			SELECT
+       				   ROW_NUMBER() OVER(
+                      ORDER BY B.RESULT_SCORE DESC
+                      ) ROW_NUM
+   					 , B.RESULT_NUM
+  					 , B.RESULT_SCORE
+  					 , B.MEMBER_NUM
+  					 , B.OPEN_YN
+  					 , B.USER_NAME
+  					 , B.GRADE_KIND
+         		  FROM GAME_RESULT B
+        		 WHERE B.OPEN_YN = 'Y'
+        		   AND B.GRADE_KIND = 'E'
+         		 ORDER BY B.RESULT_SCORE DESC
+        		) A
+  		 WHERE A.ROW_NUM = 2
+  	</select>
+  	
+  	  	<select id="selectThirdRank" resultMap="rankingResultMap">
+  		SELECT
+  			   A.USER_NAME
+             , A.RESULT_SCORE
+  		  FROM (
+       			SELECT
+       				   ROW_NUMBER() OVER(
+                      ORDER BY B.RESULT_SCORE DESC
+                      ) ROW_NUM
+   					 , B.RESULT_NUM
+  					 , B.RESULT_SCORE
+  					 , B.MEMBER_NUM
+  					 , B.OPEN_YN
+  					 , B.USER_NAME
+  					 , B.GRADE_KIND
+         		  FROM GAME_RESULT B
+        		 WHERE B.OPEN_YN = 'Y'
+        		   AND B.GRADE_KIND = 'E'
+         		 ORDER BY B.RESULT_SCORE DESC
+        		) A
+  		 WHERE A.ROW_NUM = 3
+  	</select>
+  	
+  	  	  	<select id="selectFourthRank" resultMap="rankingResultMap">
+  		SELECT
+  			   A.USER_NAME
+             , A.RESULT_SCORE
+  		  FROM (
+       			SELECT
+       				   ROW_NUMBER() OVER(
+                      ORDER BY B.RESULT_SCORE DESC
+                      ) ROW_NUM
+   					 , B.RESULT_NUM
+  					 , B.RESULT_SCORE
+  					 , B.MEMBER_NUM
+  					 , B.OPEN_YN
+  					 , B.USER_NAME
+  					 , B.GRADE_KIND
+         		  FROM GAME_RESULT B
+        		 WHERE B.OPEN_YN = 'Y'
+        		   AND B.GRADE_KIND = 'E'
+         		 ORDER BY B.RESULT_SCORE DESC
+        		) A
+  		 WHERE A.ROW_NUM = 4
+  	</select>
+  	
+  	  	  	<select id="selectFifthRank" resultMap="rankingResultMap">
+  		SELECT
+  			   A.USER_NAME
+             , A.RESULT_SCORE
+  		  FROM (
+       			SELECT
+       				   ROW_NUMBER() OVER(
+                      ORDER BY B.RESULT_SCORE DESC
+                      ) ROW_NUM
+   					 , B.RESULT_NUM
+  					 , B.RESULT_SCORE
+  					 , B.MEMBER_NUM
+  					 , B.OPEN_YN
+  					 , B.USER_NAME
+  					 , B.GRADE_KIND
+         		  FROM GAME_RESULT B
+        		 WHERE B.OPEN_YN = 'Y'
+        		   AND B.GRADE_KIND = 'E'
+         		 ORDER BY B.RESULT_SCORE DESC
+        		) A
+  		 WHERE A.ROW_NUM = 5
+  	</select>
+  	
+  </mapper>

@@ -1,4 +1,4 @@
-package com.greedy.inGame.easy;
+package com.greedy.inGame.easy.spare;
 
 import java.awt.*;
 import java.awt.event.*;

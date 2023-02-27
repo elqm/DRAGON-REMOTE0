@@ -1,7 +1,6 @@
 package com.greedy.inGame.easy;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -12,7 +11,6 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -22,11 +20,13 @@ import com.greedy.inGame.normal.GameOver;
 
 
 public class easyGame3 extends JPanel implements ActionListener {
+	private String difficulty = "E";
 	private final int WIDTH = 1400;
 	private final int HEIGHT = 875;
 	private final int DELAY = 10;
 	private Timer timer;
-	private Image backgroundImage, characterImage, characteEffectImage, timeImage, lifeImage, goldImage, preferencesImage;
+	private Thread th;
+	private Image backgroundImage, characterImage, characteEffectImage, lifeImage, goldImage;
 	private int characterX, characterY, lifeX, lifeY, goldX, goldY;
 	private Image weaponImage1, weaponImage2, weaponImage3, weaponImage4, weaponImage5, weaponImage6, weaponImage7, weaponImage8;
 	private Image[] weaponImageArr = { weaponImage1, weaponImage2, weaponImage3, weaponImage4, weaponImage5, weaponImage6, weaponImage7, weaponImage8};
@@ -39,46 +39,102 @@ public class easyGame3 extends JPanel implements ActionListener {
 	private int timeScore = 0;
 	private int totalScore = 0;
 	private JLabel lifeScoreLb, goldScoreLb, totalScoreLb;
-	private JLabel lifeImageLB, goldImageLb, timeImageLb, normalImageLb, preferencesImageLb;
 	private JLabel min, colon, sec;
 	private int mm, ss, t=0;
 	private int sTime, rTime, cTime;
 
-	private static JFrame frame = new JFrame("진격의 DRAGON");
-	private JPanel panel = new JPanel();
-	
-	private Font font = new Font("궁서체", Font.BOLD, 50);
-	
-
 	public easyGame3() {
-//		setPreferredSize(new Dimension(WIDTH, HEIGHT)); 
-//		setSize(WIDTH, HEIGHT);
+		Font font = new Font("궁서체", Font.BOLD, 50);
+
+		Image easy = new ImageIcon("images/easymode.png").getImage().getScaledInstance(178, 49, 0);
+		Image life = new ImageIcon("images/life.png").getImage().getScaledInstance(50, 50, 0);
+		Image gold = new ImageIcon("images/gold.png").getImage().getScaledInstance(60, 60, 0);
+		Image time = new ImageIcon("images/time.png").getImage().getScaledInstance(60, 61, 0);
+		Image total = new ImageIcon("images/total.png").getImage().getScaledInstance(60, 60, 0);		
+//		Image preferences = new ImageIcon("images/preferences.png").getImage().getScaledInstance(67, 66, 0);
+
+		JLabel easyImageLb = new JLabel();
+		JLabel lifeImageLB = new JLabel();
+		JLabel goldImageLb = new JLabel();
+		JLabel timeImageLb = new JLabel();
+		JLabel totalImageLb = new JLabel();
+//		JLabel preferencesImageLb = new JLabel();
+//		JButton preferencesBt = new JButton();
+
+		setLayout(null);
+
+		//		setPreferredSize(new Dimension(WIDTH, HEIGHT)); 
+		//		setSize(WIDTH, HEIGHT);
 		setBackground(Color.WHITE);
 		setFocusable(true);
 		addKeyListener(new MyKeyAdapter());
+
+		easyImageLb.setIcon(new ImageIcon(easy));
+		easyImageLb.setBounds(600, 20, 178, 49);
+		add(easyImageLb);
+
+		lifeImageLB.setIcon(new ImageIcon(life));
+		lifeImageLB.setBounds(30, 20, 60, 60);
+		add(lifeImageLB);
 		lifeScoreLb = new JLabel("" + lifeScore);
-		lifeScoreLb.setLocation(100, 800);
+		lifeScoreLb.setBounds(120, 23, 60, 60);
 		lifeScoreLb.setFont(font);
+		lifeScoreLb.setForeground(Color.BLACK);
 		add(lifeScoreLb);
+
+		goldImageLb.setIcon(new ImageIcon(gold));
+		goldImageLb.setBounds(25, 85, 60, 60);
+		add(goldImageLb);
 		goldScoreLb = new JLabel("" + goldScore);
+		goldScoreLb.setBounds(120, 58, 120, 120);
+		goldScoreLb.setForeground(Color.BLACK);
+		goldScoreLb.setFont(font);
 		add(goldScoreLb);
+
+		timeImageLb.setIcon(new ImageIcon(time));
+		timeImageLb.setBounds(1120, 3, 80, 80);
+		add(timeImageLb);
 		min = new JLabel("00"); 
-		min.setBounds(1230, 8, 80, 80);
+		min.setBounds(1210, 8, 80, 80);
 		min.setFont(font);
-		min.setForeground(Color.WHITE);
+		min.setForeground(Color.BLACK);
 		add(min);
 		colon = new JLabel(" : ");
-		colon.setBounds(1050, 8, 80, 80);
+		colon.setBounds(1240, 8, 80, 80);
 		colon.setFont(font);
-		colon.setForeground(Color.WHITE);
+		colon.setForeground(Color.BLACK);
 		add(colon);
 		sec = new JLabel("00");
-		sec.setBounds(1100, 8, 80, 80);
+		sec.setBounds(1290, 8, 80, 80);
 		sec.setFont(font);
-		sec.setForeground(Color.WHITE);
+		sec.setForeground(Color.BLACK);
 		add(sec);
+
+		totalImageLb.setIcon(new ImageIcon(total));
+		totalImageLb.setBounds(1140, 68, 80, 80);
+		add(totalImageLb);
 		totalScoreLb = new JLabel("" + totalScore);
+		totalScoreLb.setBounds(1240, 35, 160, 160);
+		totalScoreLb.setForeground(Color.BLACK);
+		totalScoreLb.setFont(font);
 		add(totalScoreLb);
+
+		//		preferencesImageLb.setIcon(new ImageIcon(preferences));
+		//		preferencesImageLb.setBounds(1270, 730, 67, 66);
+		//		add(preferencesImageLb);
+		//		preferencesBt.setBorderPainted(false); 
+		//		preferencesBt.setContentAreaFilled(false);
+		//		preferencesBt.setFocusPainted(false);
+		//		preferencesBt.setBounds(1270, 730, 67, 66);
+		//		add(preferencesBt);
+		//		preferencesBt.addActionListener(new ActionListener() {
+		//
+		//			@Override
+		//			public void actionPerformed(ActionEvent e) {
+		//				new userSettingAll().setting();
+		//			}
+		//		});
+
 		loadImages();
 		initGame();
 		TimeThread();
@@ -91,15 +147,13 @@ public class easyGame3 extends JPanel implements ActionListener {
 			weaponImageArr[i] = new ImageIcon("images/easyarrow.png").getImage();
 		}
 		characteEffectImage = new ImageIcon("images/dragon1Effect.png").getImage();
-		timeImage = new ImageIcon("images/time.png").getImage();
 		lifeImage = new ImageIcon("images/life.png").getImage();
 		goldImage = new ImageIcon("images/gold.png").getImage();
-		preferencesImage = new ImageIcon("images/preferences.png").getImage();
 	}
 
 	private void initGame() {
 		characterX = WIDTH/2 - characterImage.getWidth(null)/2; // 캐릭터 시작 지점 x축 위치
-		characterY = HEIGHT - characterImage.getHeight(null) - 200; // 캐릭터 시작 지점 y축 위치
+		characterY = HEIGHT - characterImage.getHeight(null) - 205; // 캐릭터 시작 지점 y축 위치
 		for(int i = 0; i < weaponImageArr.length; i++) {
 			weaponXArr[i] = (int)(Math.random() * (WIDTH - weaponImageArr[i].getWidth(null))); // 화살 낙하 시작 지점 x축 위치
 			weaponYArr[i] = weaponImageArr[i].getHeight(null) - 300; // 화살 낙하 시작 지점 y축 위치
@@ -130,17 +184,17 @@ public class easyGame3 extends JPanel implements ActionListener {
 		if (characterX < 0) { // 캐릭터 화면 밖으로 이동 방지
 			characterX = 0;
 		}
-		if (characterX > WIDTH - characterImage.getWidth(null)) { // 캐릭터 화면 밖으로 이동 방지
-			characterX = WIDTH - characterImage.getWidth(null);
+		if (characterX > WIDTH - characterImage.getWidth(null) - 15) { // 캐릭터 화면 밖으로 이동 방지
+			characterX = WIDTH - characterImage.getWidth(null) - 15;
 		}
 		if (characterY < 0) { // 캐릭터 화면 밖으로 이동 방지
 			characterY = 0;
 		}
-		if (characterY > HEIGHT - characterImage.getHeight(null)) { // 캐릭터 화면 밖으로 이동 방지
-			characterY = HEIGHT - characterImage.getHeight(null);
+		if (characterY > HEIGHT - characterImage.getHeight(null) - 30) { // 캐릭터 화면 밖으로 이동 방지
+			characterY = HEIGHT - characterImage.getHeight(null) - 30;
 		}
 	}
-	
+
 	/* 화살 낙하 속도 및 랜덤 낙하 지점 설정 */
 	private void moveWeapon() {
 		for(int i = 0; i < weaponImageArr.length; i++) {
@@ -171,7 +225,7 @@ public class easyGame3 extends JPanel implements ActionListener {
 			goldX = (int)(Math.random() * (WIDTH - goldImage.getWidth(null)));
 		}
 	}
-	
+
 	private void arrowCheckCollision() {
 		for(int i = 0; i < weaponImageArr.length; i++ ) {
 			Rectangle characterRect = new Rectangle(characterX, characterY, characterImage.getWidth(null), characterImage.getHeight(null));
@@ -179,11 +233,14 @@ public class easyGame3 extends JPanel implements ActionListener {
 			if (characterRect.intersects(arrowRect)) {
 				weaponXArr[i] = (int)(Math.random() * (WIDTH - weaponImageArr[i].getWidth(null)));
 				weaponYArr[i] = weaponImageArr[i].getHeight(null);
-				
+
 				lifeScore -= 1;
 				lifeScoreLb.setText("" + lifeScore);
 				if (lifeScore == 0) {
 					timer.stop();
+					th.interrupt();
+//					EasyMainFrame mf = new EasyMainFrame();
+//					EasyMainFrame.dispose();
 					new GameOver();
 				}
 			}
@@ -196,7 +253,11 @@ public class easyGame3 extends JPanel implements ActionListener {
 		if (characterRect.intersects(lifeRect)) {
 			lifeX = (int)(Math.random() * (WIDTH - lifeImage.getWidth(null)));
 			lifeY = lifeImage.getHeight(null) - 200;
-			lifeScore++;
+			if(lifeScore < 10) {
+				lifeScore++;				
+			} else {
+				lifeScore = 10;
+			}
 			lifeScoreLb.setText("" + lifeScore);
 		} 
 	}
@@ -242,13 +303,13 @@ public class easyGame3 extends JPanel implements ActionListener {
 			}
 		}
 	}
-	
+
 	/* 시간 표시 구현 및 스레드 */
 	private void TimeThread(){
 
 		sTime = (int)System.currentTimeMillis()/1000; // 시간 계산 공식. 스레드 시작/선언? 시간
 
-		Thread th = new Thread() {
+		th = new Thread() {
 
 			@Override
 			public void run() {
@@ -262,18 +323,19 @@ public class easyGame3 extends JPanel implements ActionListener {
 					ss = (rTime % 60);	// 초 계산하는 공식. 60진법 사용
 					timeScore = rTime;
 					totalScore = timeScore + goldScore;
-					totalScoreLb.setText("" + totalScore);
-					
+
 					try {
-						Thread.sleep(10);
+						Thread.sleep(100);
 
 						min.setText(String.format("%02d", mm));
 						sec.setText(String.format("%02d", ss));
+						totalScoreLb.setText("" + totalScore);
 
 						t++;
 
+
 					} catch (InterruptedException e) {
-						e.printStackTrace();
+						th.interrupt();
 					}
 
 
@@ -285,18 +347,15 @@ public class easyGame3 extends JPanel implements ActionListener {
 		th.start();
 
 	}
-
-	public static void main(String[] args) {
-		easyGame3 game = new easyGame3();
-		frame.add(game);
-		frame.setBounds(300, 200, 1400, 875);
-//		frame.pack();
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setLocationRelativeTo(null);
-		frame.setVisible(true);
-
+	
+	public int displayScore() {
+		
+		int gScore = goldScore;
+		
+		return gScore;
+		
 	}
-
+	
 }
 
 

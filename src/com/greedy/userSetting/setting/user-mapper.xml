@@ -19,7 +19,6 @@
   			 , A.OPEN_YN
   			 , A.USER_NAME
   		  FROM GAME_RESULT A
-  		 WHERE A.OPEN_YN = 'N'
   		
   	</select>
   </mapper>

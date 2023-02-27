@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 
 import com.greedy.design.PlayButton;
 import com.greedy.design.RoundedButton;
+import com.greedy.inGame.easy.easyGame3;
 
 public class GameOver extends JFrame {
 
