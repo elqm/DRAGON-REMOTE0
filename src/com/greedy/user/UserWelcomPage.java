@@ -14,6 +14,7 @@ public class UserWelcomPage {
 	public void display5() {
 		
 		JFrame mf4 = new JFrame();
+		mf4.setLocation(600, 400);
 		mf4.setSize(700, 360);
 		
 //		mf4.setLocationRelativeTo(null);
