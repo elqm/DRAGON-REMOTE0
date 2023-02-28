@@ -1,0 +1,48 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="RegistMapper">
+  
+  	<resultMap id="registResultMap" type="com.greedy.user.RegistDTO">
+ 		<id property="memberNum" column="MEMBER_NUM"/>
+  		<result property="userId" column="USER_ID"/>
+  		<result property="userPassword" column="USER_PASSWORD"/>
+  		<result property="userName" column="USER_NAME"/>
+  		<result property="userUser" column="USER_USER"/>
+  		<result property="gradeNum" column="GRADE_NUM"/>
+  		
+  	</resultMap>
+  	
+  	  		<insert id="insertMember" parameterType="com.greedy.user.RegistDTO">
+ 			INSERT
+ 			  INTO MEMBER A
+ 			 (
+ 			  A.MEMBER_NUM
+ 			, A.USER_ID
+ 			, A.USER_PASSWORD
+ 			, A.USER_NAME
+ 			, A.USER_USER
+ 			, A.GRADE_NUM
+ 			 ) 
+ 			 VALUES
+ 			(
+ 			  MEMBER_NUM.NEXTVAL
+ 			, #{ userId }
+ 			, #{ userPassword }
+ 			, #{ userName }
+ 			, NULL
+ 			, NULL
+ 			)
+  		</insert>
+ 
+		<select id="loginMember" resultMap="registResultMap">
+       			SELECT
+ 				  A.USER_ID
+ 				, A.USER_PASSWORD
+         		  FROM MEMBER A
+        		 WHERE A.USER_ID = #{ userId }
+        		   AND A.USER_PASSWORD = #{ userPassword }
+		</select> 
+  	
+  	
+  </mapper>

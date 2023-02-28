@@ -1,9 +1,29 @@
 package com.greedy.inGame.easy.play1;
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Random;
+
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.DataLine;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.Timer;
+
+import com.greedy.inGame.normal.GameOver;
+import com.greedy.music.musicOn;
 
 public class easyGame6 extends JPanel implements ActionListener {
 
@@ -28,7 +48,7 @@ public class easyGame6 extends JPanel implements ActionListener {
 
         characterX = 300;
         characterY = 600;
-        score = 5;
+        score = 2;
         gameover = false;
 
         weaponX = new ArrayList<>();
@@ -64,6 +84,7 @@ public class easyGame6 extends JPanel implements ActionListener {
         timer = new Timer(25, this);
         timer.start();
     }
+    
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -137,11 +158,41 @@ public class easyGame6 extends JPanel implements ActionListener {
         
         if (score == 0) {
             gameover = true;
-            timer.stop();       							
+            timer.stop();
+//            musicOn();
+            new GameOver();
         }
         
         repaint();
     }
+    
+    public void musicOn() {
+		File bgm;
+		AudioInputStream stream;
+		AudioFormat format;
+		DataLine.Info info;
+		
+		bgm = new File("Sound/sound.Wav"); 
+		Clip clip;
+		
+		
+		
+		try {
+			stream = AudioSystem.getAudioInputStream(bgm);
+			format = stream.getFormat();
+			info = new DataLine.Info(Clip.class, format);
+			clip = (Clip)AudioSystem.getLine(info);
+			clip.open(stream);
+			clip.start();
+			if(gameover = true) {
+				clip.stop();
+			}
+			
+		} catch (Exception e) {
+			System.out.println("err : " + e);
+			}
+		
+	}
     
     
     public static void main(String[] args) {
@@ -150,5 +201,20 @@ public class easyGame6 extends JPanel implements ActionListener {
         frame.getContentPane().add(new easyGame6());
         frame.pack();
         frame.setVisible(true);
+        
+        musicOn test = new musicOn();
+		while(true) {
+			try {
+				test.musicOn();
+				  Thread.sleep(94000); // 3초에 한번씩 재생하도록 설정
+			} catch(Exception e) {
+				
+			}
+		}
     }
 }
+
+
+
+
+

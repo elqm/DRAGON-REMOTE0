@@ -1,6 +1,7 @@
 package com.greedy.inGame.normal;
 
 
+
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,9 +12,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import com.greedy.design.PlayButton;
-import com.greedy.design.RoundedButton;
-import com.greedy.inGame.easy.easyGame3;
+import com.greedy.inGame.easy.EasyMainFrame;
+import com.greedy.resultPage.ScorePage;
 
 public class GameOver extends JFrame {
 
@@ -52,9 +52,8 @@ public class GameOver extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
 				mf.dispose();
-				new Description();
+				new ScorePage().display();;
 
 			}
 		});

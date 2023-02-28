@@ -14,15 +14,16 @@ public class UserWelcomPage {
 	public void display5() {
 		
 		JFrame mf4 = new JFrame();
+		mf4.setLocation(600, 400);
 		mf4.setSize(700, 360);
 		
-//		mf4.setLocationRelativeTo(null);
+		mf4.setLocationRelativeTo(null);
 //		mf4.setAutoRequestFocus(false);
 		
 		ImageIcon img2 = new ImageIcon("images/확인버튼팝업.png");
 		
 		JPanel panel2 = new JPanel();
-		
+		 
 		panel2.setLayout(null);
 		
 		JLabel label2 = new JLabel(img2);
