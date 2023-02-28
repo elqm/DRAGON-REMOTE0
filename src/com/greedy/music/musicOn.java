@@ -1,47 +1,41 @@
 package com.greedy.music; 
 import java.io.File;
+import java.io.IOException;
 
-import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
-import javax.sound.sampled.DataLine;
+import javax.sound.sampled.Line;
+import javax.sound.sampled.LineEvent;
+import javax.sound.sampled.LineListener;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.sound.sampled.LineUnavailableException;
 
-public class musicOn {
-	public void musicOn() {
-		File bgm;
-		AudioInputStream stream;
-		AudioFormat format;
-		DataLine.Info info;
-		
-		bgm = new File("Sound/sound.Wav"); 
-		Clip clip;
-		
-		try {
-			stream = AudioSystem.getAudioInputStream(bgm);
-			format = stream.getFormat();
-			info = new DataLine.Info(Clip.class, format);
-			clip = (Clip)AudioSystem.getLine(info);
-			clip.open(stream);
-			clip.start();
-			
-		} catch (Exception e) {
-			System.out.println("err : " + e);
-			}
-		
-	}
+public class musicOn implements LineListener {
+    private Clip clip;
 
-	public static void main(String[] args) {
-		musicOn test = new musicOn();
-		while(true) {
-			try {
-				test.musicOn();
-				  Thread.sleep(94000); // 3초에 한번씩 재생하도록 설정
-			} catch(Exception e) {
-				
-			}
-		}
+    public void playSound(String soundFilePath) {
+        try {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundFilePath).getAbsoluteFile());
+            clip = (Clip) AudioSystem.getLine(new Line.Info(Clip.class));
+            clip.addLineListener(this);
+            clip.open(audioInputStream);
+            clip.start();
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+            e.printStackTrace();
+        }
+    }
 
-	}
-
+    @Override
+    public void update(LineEvent event) {
+        if (event.getType() == LineEvent.Type.STOP) {
+            clip.close();
+        }
+    }
+    public void stopSound() {
+        if (clip != null) {
+            clip.stop();
+            clip.close();
+        }
+    }
 }

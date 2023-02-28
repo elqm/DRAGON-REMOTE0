@@ -23,12 +23,15 @@ import com.greedy.music.musicOn;
 
 
 public class userSound {
+	  private JButton button;
+	    private musicOn musicOn;
 
 	public void  Sound() {
 	
 		JFrame mF = new JFrame();
-		mF.setBounds(820,450,401,300);
 		
+		mF.setBounds(820,450,401,300);
+		  musicOn = new musicOn();
 		
 		JPanel panel2 = new JPanel(); 
 		panel2.setLayout(null);
@@ -43,7 +46,9 @@ public class userSound {
 		JButton button1 = new JButton(new ImageIcon("images/Frame 12.png"));
 		JButton on = new JButton("켜기");
 		JButton off = new JButton("끄기");
-		
+
+
+		  
 		
 		
 		on.setBounds(130,120,70,30);
@@ -75,39 +80,30 @@ public class userSound {
 			mF.setVisible(false);
 			}
 		});
-
+		
 		on.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-		
-				        musicOn musicPlayer = new musicOn();
-				        musicPlayer.musicOn();
-				        
-				       
-				        while (true) {
-				            try {
-				                Thread.sleep(94000);
-				                musicPlayer.musicOn();
-				            } catch (InterruptedException e1) {
-				                e1.printStackTrace();				                
-				            }
-				           
-				        }
-				         }
+			 musicOn.playSound("Sound/sound.wav");	
+			}
 		});
-		
-			off.addActionListener(new ActionListener() {
-			
+
+		off.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-		
-				
+				musicOn.stopSound();
 			}
 		});
 		
 		
+	
+		
+		
+		
+		
 		panel2.add(on);
+		
 		panel2.add(off);
 		panel2.add(button1); 
 		panel2.add(label);
