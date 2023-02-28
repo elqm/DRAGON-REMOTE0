@@ -1,10 +1,9 @@
 package com.greedy.user;
 
-import java.util.List;
+
 import java.util.Map;
 
 import com.greedy.character.choiceCharacter;
-import com.greedy.ranking.RankingDTO;
 
 public class RegistController {
 	
@@ -49,7 +48,8 @@ public class RegistController {
 			cc.display();
 
 		} else {
-			printResult.printErrorMessage("registNewMenu");
+			errorPage error = new errorPage();
+			error.display10();
 
 			
 	}

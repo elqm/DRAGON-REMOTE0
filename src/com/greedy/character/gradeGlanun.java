@@ -12,7 +12,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import com.greedy.inGame.easy.EasyDescription;
+import com.greedy.inGame.easy.EasyDescriptionGlaun;
+import com.greedy.inGame.hard.HardDescriptionGlaun;
+import com.greedy.inGame.normal.NormalDescriptionGlaun;
 
 public class gradeGlanun {
 	
@@ -52,28 +54,29 @@ public class gradeGlanun {
 	        @Override
 	    	public void actionPerformed(ActionEvent e) {
 	        	mF.setVisible(false);
-	        	new EasyDescription();
+	        	new EasyDescriptionGlaun();
 	        }
 	    });
-//	    
-//	    button2.addActionListener(new ActionListener() {
-//			
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//			 new Description();
-//		
-//				mF.setVisible(false);
-//			}
-//			});
-//	   button2.addActionListener(new ActionListener() {
-//			
-//				@Override
-//				public void actionPerformed(ActionEvent e) {
-//					choiceCharacter2 choice = new choiceCharacter2();
-//					choice.display();
-//					  mF.setVisible(false);
-//				}
-//			});
+	    
+	    button2.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				mF.setVisible(false);
+			 new NormalDescriptionGlaun();
+		 
+			}
+			});
+	    
+	   button3.addActionListener(new ActionListener() {
+			
+				@Override
+				public void actionPerformed(ActionEvent e) {
+
+					mF.setVisible(false);
+			        new HardDescriptionGlaun();
+				}
+			});
 	    button4.addActionListener(new ActionListener() {
 			
 			@Override

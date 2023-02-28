@@ -1,6 +1,7 @@
 package com.greedy.inGame.normal;
 
 
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -10,16 +11,14 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import com.greedy.inGame.easy.EasyMainFrame;
-
-public class Description extends JFrame {
+public class NormalDescriptionGlaun extends JFrame {
 
 	private JFrame mf = new JFrame();
 
-	public Description() { 
+	public NormalDescriptionGlaun() { 
 
 		this.mf = this;
-		mf.setSize(1190, 770);
+		mf.setSize(1400, 875);
 		mf.setLocationRelativeTo(null);
 		mf.setResizable(false);
 
@@ -29,16 +28,17 @@ public class Description extends JFrame {
 
 		panel.setLayout(null);
 
-		ImageIcon desc = new ImageIcon("images/normalDesc3.png");
+		Image desc = new ImageIcon("images/normalDesc2.png").getImage().getScaledInstance(1390, 875, 0);;
 
-		JLabel descLb = new JLabel(desc);
-		descLb.setSize(1178, 737);
+		JLabel descLb = new JLabel();
+		descLb.setIcon(new ImageIcon(desc));
+		descLb.setSize(1400, 875);
 
 		JButton playBt = new JButton();
 		playBt.setBorderPainted(false); 
 		playBt.setContentAreaFilled(false);
 		playBt.setFocusPainted(false);
-		playBt.setBounds(710, 530, 250, 100);
+		playBt.setBounds(845, 630, 280, 100);
 
 		playBt.addActionListener(new ActionListener() {
 
@@ -46,8 +46,8 @@ public class Description extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 
 				mf.dispose();
-				new EasyMainFrame();
-
+				new NormalMainFrameGlaun();
+ 
 			}
 		});
 		panel.add(playBt);

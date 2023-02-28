@@ -1,4 +1,4 @@
-package com.greedy.inGame.easy;
+package com.greedy.inGame.hard;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -16,12 +16,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-import com.greedy.inGame.normal.GameOver;
+import com.greedy.inGame.easy.GameOver;
 
 
 
-public class easyGame3 extends JPanel implements ActionListener {
-	private String difficulty = "E";
+public class HardGameHyton extends JPanel implements ActionListener {
+	private String difficulty = "H";
 	private final int WIDTH = 1400;
 	private final int HEIGHT = 875;
 	private final int DELAY = 10;
@@ -29,13 +29,13 @@ public class easyGame3 extends JPanel implements ActionListener {
 	private Thread th;
 	private Image backgroundImage, characterImage, characteEffectImage, lifeImage, goldImage;
 	private int characterX, characterY, lifeX, lifeY, goldX, goldY;
-	private Image weaponImage1, weaponImage2, weaponImage3, weaponImage4, weaponImage5, weaponImage6, weaponImage7, weaponImage8;
-	private Image[] weaponImageArr = { weaponImage1, weaponImage2, weaponImage3, weaponImage4, weaponImage5, weaponImage6, weaponImage7, weaponImage8};
-	private int weaponX1, weaponX2, weaponX3, weaponX4, weaponX5, weaponX6, weaponX7, weaponX8;
-	private int[] weaponXArr = {weaponX1, weaponX2, weaponX3, weaponX4, weaponX5, weaponX6, weaponX7, weaponX8};
-	private int weaponY1, weaponY2, weaponY3, weaponY4, weaponY5, weaponY6, weaponY7, weaponY8;	
-	private int[] weaponYArr = {weaponY1, weaponY2, weaponY3, weaponY4, weaponY5, weaponY6, weaponY7, weaponY8};
-	private int lifeScore = 1;
+	private Image weaponImage1, weaponImage2, weaponImage3, weaponImage4, weaponImage5, weaponImage6, weaponImage7, weaponImage8, weaponImage9, weaponImage10;
+	private Image[] weaponImageArr = { weaponImage1, weaponImage2, weaponImage3, weaponImage4, weaponImage5, weaponImage6, weaponImage7, weaponImage8, weaponImage9, weaponImage10};
+	private int weaponX1, weaponX2, weaponX3, weaponX4, weaponX5, weaponX6, weaponX7, weaponX8, weaponX9, weaponX10;
+	private int[] weaponXArr = {weaponX1, weaponX2, weaponX3, weaponX4, weaponX5, weaponX6, weaponX7, weaponX8, weaponX9, weaponX10};
+	private int weaponY1, weaponY2, weaponY3, weaponY4, weaponY5, weaponY6, weaponY7, weaponY8, weaponY9, weaponY10;	
+	private int[] weaponYArr = {weaponY1, weaponY2, weaponY3, weaponY4, weaponY5, weaponY6, weaponY7, weaponY8, weaponY9, weaponY10};
+	private int lifeScore = 10;
 	private int goldScore = 0;
 	private int timeScore = 0;
 	private int totalScore = 0;
@@ -45,13 +45,13 @@ public class easyGame3 extends JPanel implements ActionListener {
 	private int sTime, rTime, cTime;
     private boolean gameover;
 
-	public easyGame3() {
+	public HardGameHyton() {
 		
         gameover = false;
 		
 		Font font = new Font("궁서체", Font.BOLD, 50);
 
-		Image easy = new ImageIcon("images/easymode.png").getImage().getScaledInstance(178, 49, 0);
+		Image easy = new ImageIcon("images/hardmode.png").getImage().getScaledInstance(138, 35, 0);
 		Image life = new ImageIcon("images/life.png").getImage().getScaledInstance(50, 50, 0);
 		Image gold = new ImageIcon("images/gold.png").getImage().getScaledInstance(60, 60, 0);
 		Image time = new ImageIcon("images/time.png").getImage().getScaledInstance(60, 61, 0);
@@ -76,7 +76,7 @@ public class easyGame3 extends JPanel implements ActionListener {
 		addKeyListener(new MyKeyAdapter());
 
 		easyImageLb.setIcon(new ImageIcon(easy));
-		easyImageLb.setBounds(600, 20, 178, 49);
+		easyImageLb.setBounds(630, 20, 138, 35);
 		add(easyImageLb);
 
 		lifeImageLB.setIcon(new ImageIcon(life));
@@ -85,7 +85,7 @@ public class easyGame3 extends JPanel implements ActionListener {
 		lifeScoreLb = new JLabel("" + lifeScore);
 		lifeScoreLb.setBounds(120, 23, 60, 60);
 		lifeScoreLb.setFont(font);
-		lifeScoreLb.setForeground(Color.BLACK);
+		lifeScoreLb.setForeground(Color.WHITE);
 		add(lifeScoreLb);
 
 		goldImageLb.setIcon(new ImageIcon(gold));
@@ -93,7 +93,7 @@ public class easyGame3 extends JPanel implements ActionListener {
 		add(goldImageLb);
 		goldScoreLb = new JLabel("" + goldScore);
 		goldScoreLb.setBounds(120, 58, 120, 120);
-		goldScoreLb.setForeground(Color.BLACK);
+		goldScoreLb.setForeground(Color.WHITE);
 		goldScoreLb.setFont(font);
 		add(goldScoreLb);
 
@@ -103,17 +103,17 @@ public class easyGame3 extends JPanel implements ActionListener {
 		min = new JLabel("00"); 
 		min.setBounds(1210, 8, 80, 80);
 		min.setFont(font);
-		min.setForeground(Color.BLACK);
+		min.setForeground(Color.WHITE);
 		add(min);
 		colon = new JLabel(" : ");
 		colon.setBounds(1240, 8, 80, 80);
 		colon.setFont(font);
-		colon.setForeground(Color.BLACK);
+		colon.setForeground(Color.WHITE);
 		add(colon);
 		sec = new JLabel("00");
 		sec.setBounds(1290, 8, 80, 80);
 		sec.setFont(font);
-		sec.setForeground(Color.BLACK);
+		sec.setForeground(Color.WHITE);
 		add(sec);
 
 		totalImageLb.setIcon(new ImageIcon(total));
@@ -121,7 +121,7 @@ public class easyGame3 extends JPanel implements ActionListener {
 		add(totalImageLb);
 		totalScoreLb = new JLabel("" + totalScore);
 		totalScoreLb.setBounds(1240, 35, 160, 160);
-		totalScoreLb.setForeground(Color.BLACK);
+		totalScoreLb.setForeground(Color.WHITE);
 		totalScoreLb.setFont(font);
 		add(totalScoreLb);
 
@@ -147,19 +147,19 @@ public class easyGame3 extends JPanel implements ActionListener {
 	}
 
 	private void loadImages() {
-		backgroundImage = new ImageIcon("images/easyBackground1.png").getImage();
-		characterImage = new ImageIcon("images/dragon1.png").getImage();
+		backgroundImage = new ImageIcon("images/hardBg2.png").getImage();
+		characterImage = new ImageIcon("images/hyton.png").getImage();
 		for(int i = 0; i < weaponImageArr.length; i++) {
-			weaponImageArr[i] = new ImageIcon("images/easyarrow.png").getImage();
+			weaponImageArr[i] = new ImageIcon("images/icearrow.png").getImage();
 		}
 		characteEffectImage = new ImageIcon("images/dragon1Effect.png").getImage();
 		lifeImage = new ImageIcon("images/life.png").getImage();
 		goldImage = new ImageIcon("images/gold.png").getImage();
 	}
-
+ 
 	private void initGame() {
 		characterX = WIDTH/2 - characterImage.getWidth(null)/2; // 캐릭터 시작 지점 x축 위치
-		characterY = HEIGHT - characterImage.getHeight(null) - 205; // 캐릭터 시작 지점 y축 위치
+		characterY = HEIGHT - characterImage.getHeight(null); // 캐릭터 시작 지점 y축 위치
 		for(int i = 0; i < weaponImageArr.length; i++) {
 			weaponXArr[i] = (int)(Math.random() * (WIDTH - weaponImageArr[i].getWidth(null))); // 화살 낙하 시작 지점 x축 위치
 			weaponYArr[i] = weaponImageArr[i].getHeight(null) - 300; // 화살 낙하 시작 지점 y축 위치
@@ -204,10 +204,10 @@ public class easyGame3 extends JPanel implements ActionListener {
 	/* 화살 낙하 속도 및 랜덤 낙하 지점 설정 */
 	private void moveWeapon() {
 		for(int i = 0; i < weaponImageArr.length; i++) {
-			if(weaponYArr[i] > 7) {
-				weaponYArr[i] += 7; // 무기 속도 조절
+			if(weaponYArr[i] > 9) {
+				weaponYArr[i] += 9; // 무기 속도 조절
 			} else {
-				weaponYArr[i] += (3 + i); // 무기 속도 조절
+				weaponYArr[i] += (5 + i); // 무기 속도 조절
 			}
 			if (weaponYArr[i] > HEIGHT) {
 				weaponYArr[i] = weaponImageArr[i].getHeight(null) - 300 - (i*5);
@@ -217,7 +217,7 @@ public class easyGame3 extends JPanel implements ActionListener {
 	}
 
 	private void moveLife() {
-		lifeY += 4; // 무기 속도 조절
+		lifeY += 4; // 라이프 속도 조절
 		if (lifeY > HEIGHT) {
 			lifeY = lifeImage.getHeight(null) - 300;
 			lifeX = (int)(Math.random() * (WIDTH - lifeImage.getWidth(null)));
@@ -225,7 +225,7 @@ public class easyGame3 extends JPanel implements ActionListener {
 	}
 
 	private void moveGold() {
-		goldY += 3; // 무기 속도 조절
+		goldY += 3; // 골드 속도 조절
 		if (goldY > HEIGHT) {
 			goldY = goldImage.getHeight(null) - 300;
 			goldX = (int)(Math.random() * (WIDTH - goldImage.getWidth(null)));
@@ -239,18 +239,29 @@ public class easyGame3 extends JPanel implements ActionListener {
 			if (characterRect.intersects(arrowRect)) {
 				weaponXArr[i] = (int)(Math.random() * (WIDTH - weaponImageArr[i].getWidth(null)));
 				weaponYArr[i] = weaponImageArr[i].getHeight(null);
-
-				lifeScore -= 1;
-				lifeScoreLb.setText("" + lifeScore);
-				if (lifeScore == 0) {
+				
+				if (lifeScore <= 0) {
+					lifeScore = 0;
 		            gameover = true;
 					timer.stop();
 					th.interrupt();
-					
-//					EasyMainFrame mf = new EasyMainFrame();
-//					EasyMainFrame.dispose();
 					new GameOver();
+				} else if(lifeScore == 1) {
+					lifeScore -= 1;
+		            gameover = true;
+					timer.stop();
+					th.interrupt();
+					new GameOver();
+				} else if(lifeScore == 2) {
+					lifeScore -= 2;
+		            gameover = true;
+					timer.stop();
+					th.interrupt();
+					new GameOver();
+				} else {
+					lifeScore -= 3;
 				}
+				lifeScoreLb.setText("" + lifeScore);
 			}
 		}
 	}
@@ -354,14 +365,6 @@ public class easyGame3 extends JPanel implements ActionListener {
 		};
 		th.start();
 
-	}
-	
-	public int displayScore() {
-		
-		int gScore = goldScore;
-		
-		return gScore;
-		
 	}
 	
 }

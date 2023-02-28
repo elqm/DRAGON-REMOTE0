@@ -11,11 +11,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class EasyDescription extends JFrame {
-
+public class EasyDescriptionZorg extends JFrame {
+ 
 	private JFrame mf = new JFrame();
 
-	public EasyDescription() { 
+	public EasyDescriptionZorg() { 
 
 		this.mf = this;
 		mf.setSize(1400, 875);
@@ -46,7 +46,7 @@ public class EasyDescription extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 
 				mf.dispose();
-				new EasyMainFrame();
+				new EasyMainFrameZorg();
 
 			}
 		});
