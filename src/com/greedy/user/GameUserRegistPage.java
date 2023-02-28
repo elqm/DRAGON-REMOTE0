@@ -114,18 +114,7 @@ public void display3() {
 				
 			}
 		});
-		
-		
-			
-				
-				
-		
-		
-		
-		
-		
-		
-		
+	
 		
 		
 		mf3.add(panel);
