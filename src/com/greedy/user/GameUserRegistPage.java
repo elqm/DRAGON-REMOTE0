@@ -24,12 +24,12 @@ public class GameUserRegistPage {
 public void display3() {
 		
 		RegistController registController = new RegistController();
-	
+	 
 		JFrame mf3 = new JFrame("진격의 DRAGON");
 		mf3.setLocation(400, 0);
 		mf3.setSize(1080, 1080);
 		
-//		mf3.setLocationRelativeTo(null);
+		mf3.setLocationRelativeTo(null);
 //		mf3.setAutoRequestFocus(false);
 		
 		ImageIcon img = new ImageIcon("images/회원가입창.png");

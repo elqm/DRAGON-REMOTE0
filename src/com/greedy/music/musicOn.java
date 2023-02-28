@@ -14,7 +14,7 @@ public class musicOn {
 		AudioFormat format;
 		DataLine.Info info;
 		
-		bgm = new File("Sound/sound.Wav"); 
+		bgm = new File("Sound/sound.wav"); 
 		Clip clip;
 		
 		try {

@@ -12,6 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import com.greedy.inGame.easy.EasyMainFrame;
 import com.greedy.resultPage.ScorePage;
 
 public class GameOver extends JFrame {
@@ -51,7 +52,6 @@ public class GameOver extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
 				mf.dispose();
 				new ScorePage().display();;
 

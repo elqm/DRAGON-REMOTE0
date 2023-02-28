@@ -20,7 +20,7 @@ public class RegistService{
 		SqlSession sqlSession = getSqlSession();
 		
 		int result = registDAO.insertMember(sqlSession, member);
-		
+		 
 		if(result > 0) {
 			sqlSession.commit();
 		} else {
@@ -30,6 +30,16 @@ public class RegistService{
 		sqlSession.close();
 		
 		return result > 0? true: false;
+	}
+
+	public static RegistDTO loginMember(RegistDTO member) {
+		SqlSession sqlSession = getSqlSession();
+		
+		RegistDTO result = registDAO.loginMember(sqlSession, member);
+		
+		sqlSession.close();
+		
+		return result;
 	}
 
 
