@@ -10,9 +10,10 @@ public class RegistDTO {
 	private String gradeNum;
 	
 	
-	public void RegistDTO() {}
+	public RegistDTO() {} 
 
-	public RegistDTO() {
+	public RegistDTO(int memberNum, String userId, String userPassword, String userName, String userUser,
+			String gradeNum) {
 		super();
 		this.memberNum = memberNum;
 		this.userId = userId;

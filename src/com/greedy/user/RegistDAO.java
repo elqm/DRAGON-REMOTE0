@@ -8,6 +8,10 @@ public class RegistDAO {
 		return sqlSession.insert("RegistMapper.insertMember", member);
 	}
 
+	public RegistDTO loginMember(SqlSession sqlSession, RegistDTO member) {
+		return sqlSession.selectOne("RegistMapper.loginMember", member);
+	}
+ 
 
 
 	
