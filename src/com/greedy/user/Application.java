@@ -10,6 +10,7 @@ public class Application {
 //		new GameUserLoginPage().display3();
 //		new UserWelcomPage().display5();
 //		new openTest().Sound();
+//		new errorPage().display10();
 	}
 
 }
