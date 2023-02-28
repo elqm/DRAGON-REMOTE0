@@ -1,5 +1,4 @@
-package com.greedy.inGame.normal;
-
+package com.greedy.inGame.easy.spare;
 
 import java.awt.Color;
 import java.awt.Font;

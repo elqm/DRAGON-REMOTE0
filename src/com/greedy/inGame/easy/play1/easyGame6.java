@@ -1,4 +1,5 @@
 package com.greedy.inGame.easy.play1;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -22,7 +23,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-import com.greedy.inGame.normal.GameOver;
+import com.greedy.inGame.easy.GameOver;
 import com.greedy.music.musicOn;
 
 public class easyGame6 extends JPanel implements ActionListener {

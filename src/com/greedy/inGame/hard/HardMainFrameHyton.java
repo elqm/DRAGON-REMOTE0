@@ -1,19 +1,17 @@
-package com.greedy.inGame.easy;
+package com.greedy.inGame.hard;
 
 import javax.swing.JFrame;
 
-import com.greedy.inGame.easy.play1.easyGame6;
 
-
-public class EasyMainFrame extends JFrame {
+public class HardMainFrameHyton extends JFrame {
 	
-	public EasyMainFrame() {
-        this.getContentPane().add(new easyGame3());
+	public HardMainFrameHyton() {
+        this.getContentPane().add(new HardGameHyton());
 		this.setBounds(300, 200, 1400, 875);
 		this.pack();
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
+	} 
 }

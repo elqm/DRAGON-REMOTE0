@@ -11,6 +11,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import com.greedy.inGame.easy.EasyDescriptionZorg;
+import com.greedy.inGame.hard.HardDescriptionZorg;
+import com.greedy.inGame.normal.NormalDescriptionZorg;
+
 public class gradeZorg {
 	
 	
@@ -45,31 +49,33 @@ public class gradeZorg {
 	    button4.setBounds(100, 30, 70, 70);
 		   
 		    
-//	    button1.addActionListener(new ActionListener() {
-//	        @Override
-//	    	public void actionPerformed(ActionEvent e) {
-//	        	mF.setVisible(false);
-//	        }
-//	    });
-//	    
-//	    button2.addActionListener(new ActionListener() {
-//			
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				choiceCharacter2 choice = new choiceCharacter2();
-//				choice.display();
-//				  mF.setVisible(false);
-//			}
-//		});
-//	   button2.addActionListener(new ActionListener() {
-//			
-//				@Override
-//				public void actionPerformed(ActionEvent e) {
-//					choiceCharacter2 choice = new choiceCharacter2();
-//					choice.display();
-//					  mF.setVisible(false);
-//				}
-//			});
+	    button1.addActionListener(new ActionListener() {
+	        @Override
+	    	public void actionPerformed(ActionEvent e) {
+	        	mF.setVisible(false);
+	        	new EasyDescriptionZorg();
+	        }
+	    });
+	    
+	    button2.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				  mF.setVisible(false);
+				  new NormalDescriptionZorg();
+			}
+		});
+	    
+	   button3.addActionListener(new ActionListener() {
+		 	
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					choiceCharacter2 choice = new choiceCharacter2();
+					choice.display();
+					mF.setVisible(false);
+			        new HardDescriptionZorg();
+				}
+			});
 	    button4.addActionListener(new ActionListener() {
 			
 			@Override

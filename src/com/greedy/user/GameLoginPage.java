@@ -93,7 +93,7 @@ public class GameLoginPage  {
 			public void actionPerformed(ActionEvent e) {
 				
 				registController.loginMember(inputMember());
-				choiceCharacter cc = new choiceCharacter();
+//				choiceCharacter cc = new choiceCharacter();
 //				cc.display();
 //				mf2.setVisible(false);
 			}

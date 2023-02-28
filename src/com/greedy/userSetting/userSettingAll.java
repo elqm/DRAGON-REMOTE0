@@ -1,4 +1,5 @@
 package com.greedy.userSetting;
+
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,9 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import com.greedy.inGame.easy.easyGame3;
 import com.greedy.ranking.RankingPage;
-
 public class userSettingAll{
 		
 		public void setting() {
@@ -80,8 +79,8 @@ public class userSettingAll{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				easyGame3 easy = new easyGame3();
-				mF.setVisible(false);
+//				easyGame3 easy = new easyGame3();
+//				mF.setVisible(false);
 			}
 		});
 		

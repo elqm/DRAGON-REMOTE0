@@ -1,5 +1,6 @@
 package com.greedy.resultPage;
 
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -11,7 +12,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import com.greedy.inGame.easy.easyGame3;
 
 public class ScorePage {
 
