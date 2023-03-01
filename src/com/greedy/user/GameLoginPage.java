@@ -83,7 +83,7 @@ public class GameLoginPage  {
 			
 				GameUserRegistPage userRegist = new GameUserRegistPage();
 				userRegist.display3();
-				mf2.setVisible(false);
+
 			}
 		});
 		
@@ -93,6 +93,7 @@ public class GameLoginPage  {
 			public void actionPerformed(ActionEvent e) {
 				
 				registController.loginMember(inputMember());
+				mf2.setVisible(false);
 //				choiceCharacter cc = new choiceCharacter();
 //				cc.display();
 //				mf2.setVisible(false);
@@ -112,11 +113,18 @@ public class GameLoginPage  {
 		mf2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
-	private static Map<String, String> inputMember() {
+	private Map<String, String> inputMember() {
 		
 	Map<String, String> parameter = new HashMap<>();
 	parameter.put("id", id.getText());
 	parameter.put("pwd", pwd.getText());
+	
+	return parameter;
+}
+	
+	public String inputNickName() {
+		
+	String parameter = id.getText();
 	
 	return parameter;
 }

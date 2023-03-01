@@ -1,0 +1,45 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="RegistMapper">
+  
+  	<resultMap id="registResultMap" type="com.greedy.inGame.easy.RegistDTO">
+ 		<id property="resultNum" column="RESULT_NUM"/>
+  		<result property="score" column="RESULT_SCORE"/>
+  		<result property="memberNum" column="MEMBER_NUM"/>
+  		<result property="open" column="OPEN_YN"/>
+  		<result property="userName" column="USER_NAME"/>
+  		<result property="difficulty" column="GRADE_KIND"/>
+  		<result property="playTime" column="PLAY_TIME"/>
+  		<result property="goldScore" column="GOLD_SCORE"/>
+  		
+  	</resultMap>
+  	
+  	  		<insert id="inserResult" parameterType="com.greedy.inGame.easy.RegistDTO">
+ 			INSERT
+ 			  INTO GAME_RESULT A
+ 			 (
+   				  A.RESULT_NUM
+  				, A.RESULT_SCORE
+  				, A.MEMBER_NUM
+  				, A.OPEN_YN
+  				, A.USER_NAME
+  				, A.GRADE_KIND
+  				, A.PLAY_TIME
+  				, A.GOLD_SCORE
+ 			 ) 
+ 			 VALUES
+ 			(
+ 			  RESULT_NUM.NEXTVAL
+ 			, #{ score }
+ 			, MEMBER_NUM.NEXTVAL
+ 			, NULL
+ 			, #{ userName }
+ 			, #{ difficulty }
+ 			, #{ playTime }
+ 			, #{ goldScore }
+ 			)
+  		</insert>
+  	
+  	
+  </mapper>

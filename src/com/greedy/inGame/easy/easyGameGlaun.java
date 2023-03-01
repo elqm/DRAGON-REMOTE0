@@ -10,15 +10,24 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+import com.greedy.user.GameLoginPage;
+
 
 
 public class easyGameGlaun extends JPanel implements ActionListener {
+	
+	private GameLoginPage nickName = new GameLoginPage();
+	private String name = nickName.inputNickName();
+	private RegistController registController = new RegistController();
+	
 	private String difficulty = "E";
 	private final int WIDTH = 1400;
 	private final int HEIGHT = 875;
@@ -35,9 +44,9 @@ public class easyGameGlaun extends JPanel implements ActionListener {
 	private int[] weaponYArr = {weaponY1, weaponY2, weaponY3, weaponY4, weaponY5, weaponY6, weaponY7, weaponY8};
 	private int lifeScore = 10;
 	private int goldScore = 0;
-	private int timeScore = 0;
+	private int playTime = 0;
 	private int totalScore = 0;
-	private JLabel lifeScoreLb, goldScoreLb, totalScoreLb;
+	private JLabel nameLb, difficultyLb, timeScoreLb, lifeScoreLb, goldScoreLb, totalScoreLb;
 	private JLabel min, colon, sec;
 	private int mm, ss, t=0;
 	private int sTime, rTime, cTime;
@@ -113,6 +122,9 @@ public class easyGameGlaun extends JPanel implements ActionListener {
 		sec.setFont(font);
 		sec.setForeground(Color.BLACK);
 		add(sec);
+		
+		nameLb = new JLabel(name);
+		difficultyLb = new JLabel(difficulty + "");
 
 		totalImageLb.setIcon(new ImageIcon(total));
 		totalImageLb.setBounds(1140, 68, 80, 80);
@@ -240,7 +252,7 @@ public class easyGameGlaun extends JPanel implements ActionListener {
 
 				lifeScore -= 1;
 				lifeScoreLb.setText("" + lifeScore);
-				if (lifeScore <= 0) {
+				if (lifeScore <= 0) {					
 		            gameover = true;
 					timer.stop();
 					th.interrupt();
@@ -248,6 +260,7 @@ public class easyGameGlaun extends JPanel implements ActionListener {
 //					EasyMainFrame mf = new EasyMainFrame();
 //					EasyMainFrame.dispose();
 					new GameOver();
+					registController.regitsResult(inputResult());
 				}
 			}
 		}
@@ -327,8 +340,9 @@ public class easyGameGlaun extends JPanel implements ActionListener {
 					//							int mTime = rTime/100; // 밀리세컨드 시간 계산 공식. 우리는 초부터 계산하기 때문에 불필요함
 					mm = (rTime / 60 % 60);	// 분 계산하는 공식. 60진법 사용. 1분은 60초이기 때문에 추가로 60을 나눠줌
 					ss = (rTime % 60);	// 초 계산하는 공식. 60진법 사용
-					timeScore = rTime;
-					totalScore = timeScore + goldScore;
+					playTime = rTime;
+					totalScore = playTime + goldScore;
+					timeScoreLb = new JLabel(playTime + "");
 
 					try {
 						Thread.sleep(100);
@@ -353,6 +367,18 @@ public class easyGameGlaun extends JPanel implements ActionListener {
 		th.start();
 
 	}
+	
+	private Map<String, String> inputResult() {
+		
+	Map<String, String> parameter = new HashMap<>();
+	parameter.put("name", nameLb.getText());
+	parameter.put("difficulty", difficultyLb.getText());
+	parameter.put("playTime", timeScoreLb.getText());
+	parameter.put("goldScore", goldScoreLb.getText());
+	parameter.put("totalScore", totalScoreLb.getText());
+	
+	return parameter;
+}
 	
 }
 

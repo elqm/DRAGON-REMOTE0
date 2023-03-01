@@ -206,7 +206,7 @@ public class easyGame6 extends JPanel implements ActionListener {
         musicOn test = new musicOn();
 		while(true) {
 			try {
-				test.musicOn();
+//				test.musicOn();
 				  Thread.sleep(94000); // 3초에 한번씩 재생하도록 설정
 			} catch(Exception e) {
 				
