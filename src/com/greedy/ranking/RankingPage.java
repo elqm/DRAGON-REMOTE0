@@ -13,11 +13,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import com.greedy.inGame.easy.EasyMainFrameGlaun;
 import com.greedy.user.GameStartPage;
 import com.greedy.userSetting.userSettingAll;
 
 
 public class RankingPage {
+	private JButton button1 = new JButton();
 
 	public void  RankingPage() {
 	
@@ -46,7 +48,6 @@ public class RankingPage {
 		JLabel Rank4 = new JLabel();
 		JLabel Rank5 = new JLabel();
 		
-		JButton button1 = new JButton();
 	
 		List<RankingDTO> text1 = rankingController.selectFirstRank();
 		Rank1.setText("" + text1);
