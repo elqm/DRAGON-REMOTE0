@@ -12,8 +12,10 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 
 import com.greedy.inGame.easy.GameOver;
@@ -245,18 +247,24 @@ public class HardGameHyton extends JPanel implements ActionListener {
 		            gameover = true;
 					timer.stop();
 					th.interrupt();
+		            JFrame endFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+		            endFrame.dispose();
 					new GameOver();
 				} else if(lifeScore == 1) {
 					lifeScore -= 1;
 		            gameover = true;
 					timer.stop();
 					th.interrupt();
+		            JFrame endFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+		            endFrame.dispose();
 					new GameOver();
 				} else if(lifeScore == 2) {
 					lifeScore -= 2;
 		            gameover = true;
 					timer.stop();
 					th.interrupt();
+		            JFrame endFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+		            endFrame.dispose();
 					new GameOver();
 				} else {
 					lifeScore -= 3;

@@ -12,8 +12,10 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
  
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 
 
@@ -245,8 +247,8 @@ public class easyGameHyton extends JPanel implements ActionListener {
 					timer.stop();
 					th.interrupt();
 					
-//					EasyMainFrame mf = new EasyMainFrame();
-//					EasyMainFrame.dispose();
+		            JFrame endFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+		            endFrame.dispose();
 					new GameOver();
 				}
 			}

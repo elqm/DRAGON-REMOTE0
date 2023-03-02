@@ -14,8 +14,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 
 import com.greedy.user.GameLoginPage;
@@ -257,8 +259,8 @@ public class easyGameGlaun extends JPanel implements ActionListener {
 					timer.stop();
 					th.interrupt();
 					
-//					EasyMainFrame mf = new EasyMainFrame();
-//					EasyMainFrame.dispose();
+		            JFrame endFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+		            endFrame.dispose();
 					new GameOver();
 					registController.regitsResult(inputResult());
 				}
