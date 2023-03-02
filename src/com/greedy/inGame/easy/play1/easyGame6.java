@@ -21,6 +21,7 @@ import javax.sound.sampled.DataLine;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 
 import com.greedy.inGame.easy.GameOver;
@@ -160,6 +161,8 @@ public class easyGame6 extends JPanel implements ActionListener {
         if (score == 0) {
             gameover = true;
             timer.stop();
+            JFrame endFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+            endFrame.dispose();
 //            musicOn();
             new GameOver();
         }
