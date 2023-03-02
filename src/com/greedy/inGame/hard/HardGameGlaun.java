@@ -268,6 +268,15 @@ public class HardGameGlaun extends JPanel implements ActionListener {
 					new GameOver();
 				} else {
 					lifeScore -= 3;
+					if (lifeScore <= 0) {
+						lifeScore = 0;
+			            gameover = true;
+						timer.stop();
+						th.interrupt();
+			            JFrame endFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+			            endFrame.dispose();
+						new GameOver();
+					}
 				} 
 				lifeScoreLb.setText("" + lifeScore);
 			}

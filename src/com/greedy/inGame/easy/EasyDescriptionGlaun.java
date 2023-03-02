@@ -28,7 +28,7 @@ public class EasyDescriptionGlaun extends JFrame {
 
 		panel.setLayout(null);
 
-		Image desc = new ImageIcon("images/easyDesc.png").getImage().getScaledInstance(1390, 875, 0);;
+		Image desc = new ImageIcon("images/easyDesc3.png").getImage().getScaledInstance(1390, 875, 0);;
 
 		JLabel descLb = new JLabel();
 		descLb.setIcon(new ImageIcon(desc));
