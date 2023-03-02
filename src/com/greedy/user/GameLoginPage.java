@@ -92,10 +92,11 @@ public class GameLoginPage  {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				registController.loginMember(inputMember());
+				registController.loginMember(inputMember(), mf2);
 //				choiceCharacter cc = new choiceCharacter();
 //				cc.display();
 //				mf2.setVisible(false);
+				
 			}
 		});
 	

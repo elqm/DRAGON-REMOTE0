@@ -1,5 +1,6 @@
 package com.greedy.user;
 
+import java.awt.Dialog;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -11,9 +12,9 @@ import javax.swing.JPanel;
 
 public class errorPage {
 
-	public void display10() {
+	public void display10(JFrame mf2) {
 		
-		JFrame ef = new JFrame("진격의 DRAGON");
+		Dialog ef = new Dialog(mf2, "진격의 DRAGON");
 		ef.setLocation(600, 400);
 		ef.setSize(700, 360);
 		

@@ -60,6 +60,7 @@ public class GameStartPage  {
 		
 		panel.add(label);
 		mf.add(panel);
+		
 		panel.add(startbtn);
 		
 		mf.setVisible(true);
