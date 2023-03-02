@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import com.greedy.character.choiceCharacter;
+import com.greedy.character2.choiceCharacter1;
 
 public class GameUserRegistPage {
 	
@@ -95,7 +96,7 @@ public void display3() {
 			public void actionPerformed(ActionEvent e) {
 				
 						
-			choiceCharacter cc = new choiceCharacter();
+			choiceCharacter1 cc = new choiceCharacter1();
 				cc.display();
 			mf3.setVisible(false);
 				

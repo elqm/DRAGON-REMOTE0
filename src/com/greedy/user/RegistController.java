@@ -3,7 +3,10 @@ package com.greedy.user;
 
 import java.util.Map;
 
+import javax.swing.JFrame;
+
 import com.greedy.character.choiceCharacter;
+import com.greedy.character2.choiceCharacter1;
 
 public class RegistController {
 	
@@ -34,7 +37,7 @@ public class RegistController {
 		
 	}
  
-	public void loginMember(Map<String, String> parameter) {
+	public void loginMember(Map<String, String> parameter, JFrame mf2) {
 
 		String id = parameter.get("id");
 		String pwd = parameter.get("pwd");
@@ -44,12 +47,17 @@ public class RegistController {
 		member.setUserPassword(pwd);
 		
 		if(RegistService.loginMember(member) != null) {
-			choiceCharacter cc = new choiceCharacter();
+			choiceCharacter1 cc = new choiceCharacter1();
 			cc.display();
+//			GameUserRegistPage rp = new GameUserRegistPage();
+//			rp.
+			
+			mf2.setVisible(false);
+			
 
 		} else {
 			errorPage error = new errorPage();
-			error.display10();
+			error.display10(mf2);
 
 			
 	}
