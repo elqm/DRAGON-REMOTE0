@@ -7,7 +7,7 @@
  		<id property="resultNum" column="RESULT_NUM"/>
   		<result property="score" column="RESULT_SCORE"/>
   		<result property="memberNum" column="MEMBER_NUM"/>
-  		<result property="open" column="OPEN_YN"/>
+  		<result property="openYn" column="OPEN_YN"/>
   		<result property="userName" column="USER_NAME"/>
   		<result property="difficulty" column="GRADE_KIND"/>
   		<result property="playTime" column="PLAY_TIME"/>
@@ -33,7 +33,7 @@
  			  RESULT_NUM.NEXTVAL
  			, #{ score }
  			, MEMBER_NUM.NEXTVAL
- 			, NULL
+ 			, #{ openYn }
  			, #{ userName }
  			, #{ difficulty }
  			, #{ playTime }

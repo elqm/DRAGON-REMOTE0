@@ -5,21 +5,21 @@ public class RegistDTO {
 	private String resultNum;
 	private int score;
 	private int memberNum;
-	private boolean open;
+	private String openYn;
 	private String userName;
 	private String difficulty;
 	private int playTime;
 	private int goldScore;
 
 	public RegistDTO() {}
-	
-	public RegistDTO(String resultNum, int score, int memberNum, boolean open, String userName, String difficulty,
+
+	public RegistDTO(String resultNum, int score, int memberNum, String openYn, String userName, String difficulty,
 			int playTime, int goldScore) {
 		super();
 		this.resultNum = resultNum;
 		this.score = score;
 		this.memberNum = memberNum;
-		this.open = open;
+		this.openYn = openYn;
 		this.userName = userName;
 		this.difficulty = difficulty;
 		this.playTime = playTime;
@@ -38,8 +38,8 @@ public class RegistDTO {
 		return memberNum;
 	}
 
-	public boolean isOpen() {
-		return open;
+	public String getOpenYn() {
+		return openYn;
 	}
 
 	public String getUserName() {
@@ -70,8 +70,8 @@ public class RegistDTO {
 		this.memberNum = memberNum;
 	}
 
-	public void setOpen(boolean open) {
-		this.open = open;
+	public void setOpenYn(String openYn) {
+		this.openYn = openYn;
 	}
 
 	public void setUserName(String userName) {

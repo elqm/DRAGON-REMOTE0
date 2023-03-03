@@ -31,6 +31,7 @@ public class easyGameGlaun extends JPanel implements ActionListener {
 	private RegistController registController = new RegistController();
 	
 	private String difficulty = "E";
+	private String openYn = "Y";
 	private final int WIDTH = 1400;
 	private final int HEIGHT = 875;
 	private final int DELAY = 10;
@@ -48,7 +49,7 @@ public class easyGameGlaun extends JPanel implements ActionListener {
 	private int goldScore = 0;
 	private int playTime = 0;
 	private int totalScore = 0;
-	private JLabel nameLb, difficultyLb, timeScoreLb, lifeScoreLb, goldScoreLb, totalScoreLb;
+	private JLabel nameLb, difficultyLb, openYnLb, timeScoreLb, lifeScoreLb, goldScoreLb, totalScoreLb;
 	private JLabel min, colon, sec;
 	private int mm, ss, t=0;
 	private int sTime, rTime, cTime;
@@ -127,6 +128,7 @@ public class easyGameGlaun extends JPanel implements ActionListener {
 		
 		nameLb = new JLabel(name);
 		difficultyLb = new JLabel(difficulty + "");
+		openYnLb = new JLabel(openYn + "");
 
 		totalImageLb.setIcon(new ImageIcon(total));
 		totalImageLb.setBounds(1140, 68, 80, 80);
@@ -375,6 +377,7 @@ public class easyGameGlaun extends JPanel implements ActionListener {
 	Map<String, String> parameter = new HashMap<>();
 	parameter.put("name", nameLb.getText());
 	parameter.put("difficulty", difficultyLb.getText());
+	parameter.put("openYn", openYnLb.getText());
 	parameter.put("playTime", timeScoreLb.getText());
 	parameter.put("goldScore", goldScoreLb.getText());
 	parameter.put("totalScore", totalScoreLb.getText());

@@ -16,6 +16,7 @@ public class RegistController {
 		
 		String name = parameter.get("name");
 		String difficulty = parameter.get("difficulty");
+		String openYn = parameter.get("openYn");
 		int playTime = Integer.parseInt(parameter.get("playTime"));
 		int goldScore = Integer.parseInt(parameter.get("goldScore"));
 		int totalScore = Integer.parseInt(parameter.get("totalScore"));
@@ -23,6 +24,7 @@ public class RegistController {
 		RegistDTO result = new RegistDTO();
 		result.setUserName(name);
 		result.setDifficulty(difficulty);
+		result.setOpenYn(openYn);
 		result.setPlayTime(playTime);
 		result.setGoldScore(goldScore);
 		result.setScore(totalScore);
