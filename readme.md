@@ -4,9 +4,7 @@
 - 진격의 DRAGON
 
 
-
-로고
-
+![Group 69](https://user-images.githubusercontent.com/121847260/222627905-19f1dd9c-9d49-4548-bb94-96c71649a89b.png)
 
 
 
@@ -79,7 +77,8 @@
 # [논리/물리 데이터베이스 모델]
 
 
-논리
+![Untitled](https://user-images.githubusercontent.com/121847260/222627931-20c6ae80-857d-4793-973c-0bb60e368fd4.png)
 
 
-물리
+![Untitled (1)](https://user-images.githubusercontent.com/121847260/222627950-7d7b2c5c-a5e3-419d-a034-547c29bcdfe5.png)
+
