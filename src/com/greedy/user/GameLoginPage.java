@@ -83,6 +83,7 @@ public class GameLoginPage  {
 			
 				GameUserRegistPage userRegist = new GameUserRegistPage();
 				userRegist.display3();
+				mf2.setVisible(false);
 
 			}
 		});

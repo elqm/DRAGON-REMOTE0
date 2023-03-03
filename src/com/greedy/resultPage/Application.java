@@ -7,6 +7,7 @@ public class Application {
 
 		new ScorePage().display();
 //		new OpenYesOrNo().radio();
+		
 	}
 
 }

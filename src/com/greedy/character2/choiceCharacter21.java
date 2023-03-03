@@ -87,6 +87,16 @@ public class choiceCharacter21{
 				}
 			});
 			
+			btnback.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					choiceCharacter1 cc = new choiceCharacter1();
+					cc.display();
+					mf2.setVisible(false);
+				}
+			});
+			
 			mf2.add(panel);
 			panel.add(label);
 			panel.add(btn1);
