@@ -19,7 +19,6 @@ import com.greedy.userSetting.userSettingAll;
 
 
 public class RankingPage {
-	private JButton button1 = new JButton();
 
 	public void  RankingPage() {
 	
@@ -37,6 +36,8 @@ public class RankingPage {
 		panel2.setLayout(null);
 		
 		JButton button = new JButton(); 
+		JButton button1 = new JButton();
+		JButton button2 = new JButton(new ImageIcon("images/back.png"));
 		
 		Image image = new ImageIcon("images/GameRankingPage2.png").getImage();
 		
@@ -94,6 +95,8 @@ public class RankingPage {
 		button1.setContentAreaFilled(false);
 		button1.setFocusPainted(false);
 		
+		button2.setBounds(25, 12, 50, 50);
+		
 		panel2.setSize(1050,750);
 		
 		
@@ -105,10 +108,19 @@ public class RankingPage {
 			new GameStartPage().display();
 			}
 		});
+		
+		button2.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				mF.setVisible(false);
+			}
+		});
 
 		
 		
 		panel2.add(button1); 
+		panel2.add(button2); 
 		panel2.add(Rank1);
 		panel2.add(Rank2);
 		panel2.add(Rank3);

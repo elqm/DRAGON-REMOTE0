@@ -79,8 +79,6 @@ public class userSettingAll{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-//				easyGame3 easy = new easyGame3();
-				
 				mF.setVisible(false);
 			}
 		});
