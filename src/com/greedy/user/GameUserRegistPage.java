@@ -56,9 +56,9 @@ public void display3() {
 		
 		JButton gohomebtn = new JButton();
 		gohomebtn.setBounds(100, 950, 150, 60);
-//		gohomebtn.setContentAreaFilled(false);
-//		gohomebtn.setFocusPainted(false);
-//   	    gohomebtn.setBorderPainted(false);
+		gohomebtn.setContentAreaFilled(false);
+		gohomebtn.setFocusPainted(false);
+   	    gohomebtn.setBorderPainted(false);
 		
 		JButton userloginbtn = new JButton();
 		userloginbtn.setBounds(490, 950, 150, 60);
@@ -91,7 +91,7 @@ public void display3() {
 		});
 		
 		gamestartbtn.addActionListener(new ActionListener() {
-			
+			 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
